@@ -13,6 +13,13 @@
 		D73A7546257B181300C9E1FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D73A7545257B181300C9E1FC /* Preview Assets.xcassets */; };
 		D73A7551257B181300C9E1FC /* Learning_JourneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A7550257B181300C9E1FC /* Learning_JourneyTests.swift */; };
 		D73A755C257B181300C9E1FC /* Learning_JourneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A755B257B181300C9E1FC /* Learning_JourneyUITests.swift */; };
+		D73A756D257B19A600C9E1FC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A756C257B19A600C9E1FC /* Models.swift */; };
+		D73A7573257B1AF600C9E1FC /* MockedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A7572257B1AF600C9E1FC /* MockedModel.swift */; };
+		D73A7584257B1D1900C9E1FC /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A7583257B1D1900C9E1FC /* AppState.swift */; };
+		D73A7589257B1E2B00C9E1FC /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A7588257B1E2B00C9E1FC /* DependencyInjector.swift */; };
+		D73A7593257B214700C9E1FC /* AppEnviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A7592257B214700C9E1FC /* AppEnviroment.swift */; };
+		D73A759C257B221D00C9E1FC /* LearningRoadInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A759B257B221D00C9E1FC /* LearningRoadInteractor.swift */; };
+		D73A75A5257B28F300C9E1FC /* LearningRoadsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A75A4257B28F300C9E1FC /* LearningRoadsListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +52,13 @@
 		D73A7557257B181300C9E1FC /* Learning JourneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Learning JourneyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73A755B257B181300C9E1FC /* Learning_JourneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learning_JourneyUITests.swift; sourceTree = "<group>"; };
 		D73A755D257B181300C9E1FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D73A756C257B19A600C9E1FC /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		D73A7572257B1AF600C9E1FC /* MockedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedModel.swift; sourceTree = "<group>"; };
+		D73A7583257B1D1900C9E1FC /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		D73A7588257B1E2B00C9E1FC /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		D73A7592257B214700C9E1FC /* AppEnviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnviroment.swift; sourceTree = "<group>"; };
+		D73A759B257B221D00C9E1FC /* LearningRoadInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRoadInteractor.swift; sourceTree = "<group>"; };
+		D73A75A4257B28F300C9E1FC /* LearningRoadsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRoadsListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +109,11 @@
 		D73A753D257B181200C9E1FC /* Learning Journey */ = {
 			isa = PBXGroup;
 			children = (
+				D73A75A3257B28DF00C9E1FC /* View */,
+				D73A759A257B220700C9E1FC /* Interactors */,
+				D73A7591257B213C00C9E1FC /* System */,
+				D73A7590257B1FE000C9E1FC /* Injection */,
+				D73A7571257B1AE200C9E1FC /* Model */,
 				D73A753E257B181200C9E1FC /* Learning_JourneyApp.swift */,
 				D73A7540257B181200C9E1FC /* ContentView.swift */,
 				D73A7542257B181300C9E1FC /* Assets.xcassets */,
@@ -128,6 +147,48 @@
 				D73A755D257B181300C9E1FC /* Info.plist */,
 			);
 			path = "Learning JourneyUITests";
+			sourceTree = "<group>";
+		};
+		D73A7571257B1AE200C9E1FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D73A756C257B19A600C9E1FC /* Models.swift */,
+				D73A7572257B1AF600C9E1FC /* MockedModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D73A7590257B1FE000C9E1FC /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				D73A7583257B1D1900C9E1FC /* AppState.swift */,
+				D73A7588257B1E2B00C9E1FC /* DependencyInjector.swift */,
+			);
+			path = Injection;
+			sourceTree = "<group>";
+		};
+		D73A7591257B213C00C9E1FC /* System */ = {
+			isa = PBXGroup;
+			children = (
+				D73A7592257B214700C9E1FC /* AppEnviroment.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		D73A759A257B220700C9E1FC /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				D73A759B257B221D00C9E1FC /* LearningRoadInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		D73A75A3257B28DF00C9E1FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D73A75A4257B28F300C9E1FC /* LearningRoadsListView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +320,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D73A759C257B221D00C9E1FC /* LearningRoadInteractor.swift in Sources */,
+				D73A7573257B1AF600C9E1FC /* MockedModel.swift in Sources */,
+				D73A7584257B1D1900C9E1FC /* AppState.swift in Sources */,
+				D73A756D257B19A600C9E1FC /* Models.swift in Sources */,
 				D73A7541257B181200C9E1FC /* ContentView.swift in Sources */,
+				D73A7589257B1E2B00C9E1FC /* DependencyInjector.swift in Sources */,
+				D73A7593257B214700C9E1FC /* AppEnviroment.swift in Sources */,
+				D73A75A5257B28F300C9E1FC /* LearningRoadsListView.swift in Sources */,
 				D73A753F257B181200C9E1FC /* Learning_JourneyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
