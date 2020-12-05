@@ -65,7 +65,7 @@ struct LJViewAppearance: ViewModifier {
     @Environment(\.injected) private var injected: DIContainer
     
     func body(content: Content) -> some View {
-        contentgi
+        content
     }
 }
 
