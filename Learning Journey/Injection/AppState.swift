@@ -11,7 +11,7 @@ extension AppState {
 
 extension AppState {
     struct ViewRouting: Equatable {
-        var learningRoadsListView = LeariningRoadsListView.Routing()
+        var learningRoadsListView = LeariningJourneyView.Routing()
         var learningRoadView = LearningRoadView.Routing()
    }
 }

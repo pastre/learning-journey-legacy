@@ -13,7 +13,7 @@ struct ContentView: View {
         self.container = container
     }
     var body: some View {
-        LeariningRoadsListView()
+        LeariningJourneyView()
             .inject(container)
     }
 }

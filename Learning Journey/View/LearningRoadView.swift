@@ -36,8 +36,6 @@ struct LearningRoadView: View {
         self.learningRoad = learningRoad
         self._objectives = .init(initialValue: objectives)
     }
-    
-    
 }
 
 extension LearningRoadView {

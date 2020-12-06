@@ -27,7 +27,7 @@
 		D73A7589257B1E2B00C9E1FC /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A7588257B1E2B00C9E1FC /* DependencyInjector.swift */; };
 		D73A7593257B214700C9E1FC /* AppEnviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A7592257B214700C9E1FC /* AppEnviroment.swift */; };
 		D73A759C257B221D00C9E1FC /* LearningRoadInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A759B257B221D00C9E1FC /* LearningRoadInteractor.swift */; };
-		D73A75A5257B28F300C9E1FC /* LearningRoadsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A75A4257B28F300C9E1FC /* LearningRoadsListView.swift */; };
+		D73A75A5257B28F300C9E1FC /* LearningJourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A75A4257B28F300C9E1FC /* LearningJourneyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +74,7 @@
 		D73A7588257B1E2B00C9E1FC /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
 		D73A7592257B214700C9E1FC /* AppEnviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnviroment.swift; sourceTree = "<group>"; };
 		D73A759B257B221D00C9E1FC /* LearningRoadInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRoadInteractor.swift; sourceTree = "<group>"; };
-		D73A75A4257B28F300C9E1FC /* LearningRoadsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRoadsListView.swift; sourceTree = "<group>"; };
+		D73A75A4257B28F300C9E1FC /* LearningJourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningJourneyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,7 +224,7 @@
 		D73A75A3257B28DF00C9E1FC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D73A75A4257B28F300C9E1FC /* LearningRoadsListView.swift */,
+				D73A75A4257B28F300C9E1FC /* LearningJourneyView.swift */,
 				D7125C9A257C66F800DC7FA2 /* LearningRoadView.swift */,
 				D7125C9F257C6DC100DC7FA2 /* LearningObjectiveView.swift */,
 			);
@@ -373,7 +373,7 @@
 				D73A7589257B1E2B00C9E1FC /* DependencyInjector.swift in Sources */,
 				D73A7593257B214700C9E1FC /* AppEnviroment.swift in Sources */,
 				D72F4E5B257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift in Sources */,
-				D73A75A5257B28F300C9E1FC /* LearningRoadsListView.swift in Sources */,
+				D73A75A5257B28F300C9E1FC /* LearningJourneyView.swift in Sources */,
 				D7125C93257C659000DC7FA2 /* Store.swift in Sources */,
 				D73A753F257B181200C9E1FC /* Learning_JourneyApp.swift in Sources */,
 				D72F4E67257C49BA00EBBC69 /* LazyList.swift in Sources */,

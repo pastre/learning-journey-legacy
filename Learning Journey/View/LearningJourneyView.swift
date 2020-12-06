@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 
-struct LeariningRoadsListView: View {
+struct LeariningJourneyView: View {
     
     @Environment(\.injected) private var injected: DIContainer
     
@@ -41,7 +41,7 @@ struct LeariningRoadsListView: View {
     
 }
 
-private extension LeariningRoadsListView {
+private extension LeariningJourneyView {
     
     var notRequestedView: some View {
         Text("not requested")
@@ -54,7 +54,7 @@ private extension LeariningRoadsListView {
     
 }
 
-private extension LeariningRoadsListView {
+private extension LeariningJourneyView {
     func loadedView(_ learningRoads: LazyList<LearningRoad>) -> some View {
         List(learningRoads, id: \.name) { road in
             NavigationLink (
@@ -73,7 +73,7 @@ private extension LeariningRoadsListView {
 }
 
 
-extension LeariningRoadsListView {
+extension LeariningJourneyView {
     struct Routing: Equatable{
         var learningRoad: LearningRoad.Code?
     }

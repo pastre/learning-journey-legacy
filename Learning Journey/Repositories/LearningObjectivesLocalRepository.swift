@@ -1,11 +1,11 @@
 import Combine
 
 protocol LearningRoadsLocalRepository {
-    func learningObjectives() -> AnyPublisher<LazyList<LearningRoad>, Error>
+    func learningJourneys() -> AnyPublisher<LazyList<LearningRoad>, Error>
 }
 
 struct MockLearningRoadsLocalRepository: LearningRoadsLocalRepository {
-    func learningObjectives() -> AnyPublisher<LazyList<LearningRoad>, Error> {
+    func learningJourneys() -> AnyPublisher<LazyList<LearningRoad>, Error> {
         CurrentValueSubject([
             LearningRoad(
                 name: "Coding",
