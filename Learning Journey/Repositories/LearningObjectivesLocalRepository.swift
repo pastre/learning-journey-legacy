@@ -71,7 +71,7 @@ struct MockLearningRoadsLocalRepository: LearningRoadsLocalRepository {
                 alpha3Code: "Soft Skills"
             ),
         ].lazyList)
-            .eraseToAnyPublisher()
+        .eraseToAnyPublisher()
     }
 }
 
