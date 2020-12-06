@@ -51,7 +51,7 @@ extension LearningRoadView {
 
 private extension LearningRoadView {
     func loadedView(_ objectives: LazyList<LearningObjective>) -> some View {
-        List(objectives, id: \.name) { objective in
+        List(objectives, id: \.code) { objective in
             NavigationLink(
                 destination: self.objectiveView(objective: objective),
                 tag: objective.alpha3Code,

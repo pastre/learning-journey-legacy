@@ -59,39 +59,17 @@ struct MockLearningRoadsLocalRepository: LearningRoadsLocalRepository {
                     ),
                     .init(
                         name: "Storyboard",
-                        code: "CD01",
+                        code: "SS02",
                         alpha3Code: "2"
                     ),
                     .init(
                         name: "Storyboard",
-                        code: "CD01",
+                        code: "SS03",
                         alpha3Code: "3"
                     ),
                 ],
                 alpha3Code: "Soft Skills"
             ),
-            LearningRoad(
-                name: "1",
-                learningObjectives: [
-                    .init(
-                        name: "Storyboard",
-                        code: "SS01",
-                        alpha3Code: "y"
-                    ),
-                    .init(
-                        name: "Storyboard",
-                        code: "CD01",
-                        alpha3Code: "u"
-                    ),
-                    .init(
-                        name: "Storyboard",
-                        code: "CD01",
-                        alpha3Code: "i"
-                    ),
-                ],
-                alpha3Code: "Hi"
-            ),
-            
         ].lazyList)
             .eraseToAnyPublisher()
     }
