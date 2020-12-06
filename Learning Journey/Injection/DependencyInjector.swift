@@ -1,8 +1,6 @@
 import SwiftUI
 import Combine
 
-typealias Store<State> = CurrentValueSubject<State, Never>
-
 struct DIContainer: EnvironmentKey {
     // MARK: - Dependencies
     let appStore: Store<AppState>

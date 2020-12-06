@@ -5,10 +5,23 @@ struct LeariningRoadsListView: View {
     
     @Environment(\.injected) private var injected: DIContainer
     
+    @State private var routingState: Routing = .init()
+    private var routeBinding: Binding<Routing> {
+        $routingState.dispatched(
+            to: injected.appStore,
+            \.routing.learningRoadsListView
+        )
+    }
+    
     @State private(set) var learningRoads: Loadable<LazyList<LearningRoad>>
     
     var body: some View {
-        content
+        NavigationView {
+            AnyView(
+                content
+            )
+            .navigationBarTitle("🍎 👨‍💻 🏋️", displayMode: .large)
+        }
     }
     
     init(
@@ -44,7 +57,24 @@ private extension LeariningRoadsListView {
 private extension LeariningRoadsListView {
     func loadedView(_ learningRoads: LazyList<LearningRoad>) -> some View {
         List(learningRoads, id: \.name) { road in
-            Text(road.name)
+            NavigationLink (
+                destination: self.roadView(road: road),
+                tag: road.alpha3Code,
+                selection: self.routeBinding.learningRoad)
+            {
+                Text(road.name)
+            }
         }
+    }
+    
+    func roadView(road: LearningRoad) -> some View {
+        LearningRoadView(learningRoad: road)
+    }
+}
+
+
+extension LeariningRoadsListView {
+    struct Routing: Equatable{
+        var learningRoad: LearningRoad.Code?
     }
 }

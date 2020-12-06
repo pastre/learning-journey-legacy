@@ -10,7 +10,10 @@ extension AppState {
 }
 
 extension AppState {
-    struct ViewRouting: Equatable { /* TODO */ }
+    struct ViewRouting: Equatable {
+        var learningRoadsListView = LeariningRoadsListView.Routing()
+        var learningRoadView = LearningRoadView.Routing()
+   }
 }
 
 extension AppState {

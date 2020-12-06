@@ -3,6 +3,7 @@ import Combine
 
 protocol LearningRoadInteractor {
     func load(_ learningRoads: LoadableSubject<LazyList<LearningRoad>>)
+    func load(objectives: LoadableSubject<LazyList<LearningObjective>>, road: LearningRoad)
 }
 
 struct DefaultLearningRoadInteractor: LearningRoadInteractor {
@@ -13,7 +14,6 @@ struct DefaultLearningRoadInteractor: LearningRoadInteractor {
         let cancelBag = CancelBag()
         learningRoads.wrappedValue.setIsLoading(cancelBag: cancelBag)
         
-            print("LOADINGGGG LOCAL")
         Just<Void>
             .withErrorType(Error.self)
             .flatMap {[localRepository] in
@@ -22,9 +22,31 @@ struct DefaultLearningRoadInteractor: LearningRoadInteractor {
             .sinkToLoadable { learningRoads.wrappedValue = $0 }
             .store(in: cancelBag)
     }
+    
+    func load(objectives: LoadableSubject<LazyList<LearningObjective>>, road: LearningRoad) {
+        let cancelBag = CancelBag()
+        objectives.wrappedValue.setIsLoading(cancelBag: cancelBag)
+        
+        
+        let publisher = CurrentValueSubject<LazyList<LearningObjective>, Error>(road.learningObjectives.lazyList)
+            .eraseToAnyPublisher()
+            
+        
+        Just<Void>
+            .withErrorType(Error.self)
+            .flatMap { publisher }
+            .sinkToLoadable { objectives.wrappedValue = $0 }
+            .store(in: cancelBag)
+    }
+    
 }
 
 struct LearningRoadInteractorStub: LearningRoadInteractor {
+    func load(objectives: LoadableSubject<LazyList<LearningObjective>>, road: LearningRoad) {
+        // TODO
+    }
+    
+    
     func load(_ learningRoads: LoadableSubject<LazyList<LearningRoad>>) {
         print("LOADINGGGG STUB")
     }

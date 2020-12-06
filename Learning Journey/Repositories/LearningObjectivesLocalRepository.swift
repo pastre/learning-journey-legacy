@@ -22,7 +22,8 @@ struct MockLearningRoadsLocalRepository: LearningRoadsLocalRepository {
                         name: "Storyboard",
                         code: "CD01"
                     ),
-                ]
+                ],
+                alpha3Code: "Coding"
             ),
             LearningRoad(
                 name: "Design",
@@ -39,7 +40,8 @@ struct MockLearningRoadsLocalRepository: LearningRoadsLocalRepository {
                         name: "UI",
                         code: "DE01"
                     ),
-                ]
+                ],
+                alpha3Code: "Design"
             ),
             LearningRoad(
                 name: "Soft Skills",
@@ -56,7 +58,26 @@ struct MockLearningRoadsLocalRepository: LearningRoadsLocalRepository {
                         name: "Storyboard",
                         code: "CD01"
                     ),
-                ]
+                ],
+                alpha3Code: "Soft Skills"
+            ),
+            LearningRoad(
+                name: "1",
+                learningObjectives: [
+                    .init(
+                        name: "Storyboard",
+                        code: "SS01"
+                    ),
+                    .init(
+                        name: "Storyboard",
+                        code: "CD01"
+                    ),
+                    .init(
+                        name: "Storyboard",
+                        code: "CD01"
+                    ),
+                ],
+                alpha3Code: "Hi"
             ),
             
         ].lazyList)
