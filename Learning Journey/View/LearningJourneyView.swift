@@ -51,15 +51,26 @@ struct LeariningJourneyView: View {
     }
     
     private func loadedView(_ learningRoads: LazyList<LearningRoad>) -> some View {
-        List(learningRoads, id: \.name) { road in
-            NavigationLink (
-                destination: self.roadView(road: road),
-                tag: road.name,
-                selection: self.routeBinding.learningRoad)
-            {
-                roadCell(road)
-            }
+        ScrollView {
+            LazyVGrid(
+                columns: [GridItem].init(repeating: .init(.flexible()), count: 2),
+                alignment: .center,
+                spacing: 40,
+                pinnedViews: [],
+                content: {
+                    ForEach(learningRoads, id: \.name) { road in
+                        NavigationLink (
+                            destination: self.roadView(road: road),
+                            tag: road.name,
+                            selection: self.routeBinding.learningRoad)
+                        {
+                            roadCell(road)
+                        }
+                    }
+                }
+            )
         }
+        .padding()
     }
     
     private func roadView(road: LearningRoad) -> some View {
@@ -68,8 +79,18 @@ struct LeariningJourneyView: View {
     
     private func roadCell(_ road: LearningRoad) -> some View {
         VStack {
-            getIcon(for: road.name)
+            ZStack {
+                Circle()
+                    .fill(Color.ljGray)
+                    .frame(width: 128, height: 128)
+                Circle()
+                    .fill(Color.white)
+                    .frame(width: 110, height: 110)
+                getIcon(for: road.name)
+                    .frame(width: 110, height: 110, alignment: .center)
+            }
             Text(road.name)
+                .foregroundColor(Color.black)
         }
     }
     
@@ -78,6 +99,7 @@ struct LeariningJourneyView: View {
         injected.interactors.learningRoadInteractor.load($learningRoads)
     }
     
+    // FIXME: - This should come in the json, but im to lazy to properly format it now
     private func getIcon(for roadName: String) -> Image {
         switch roadName {
         case "Coding": return Image.swiftIcon
@@ -85,7 +107,7 @@ struct LeariningJourneyView: View {
         case "Success Skills": return Image.trophyIcon
         case "Process / CBL": return Image.cblIcon
         case "IT": return Image.serverIcon
-        case "Personal Growth": return Image.caseIcon
+        case "Professional Growth": return Image.caseIcon
         default: break
         }
         return Image(systemName: "faceids")
