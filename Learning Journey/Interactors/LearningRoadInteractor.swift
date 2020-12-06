@@ -24,13 +24,12 @@ struct DefaultLearningRoadInteractor: LearningRoadInteractor {
     }
     
     func load(objectives: LoadableSubject<LazyList<LearningObjective>>, road: LearningRoad) {
+        
         let cancelBag = CancelBag()
         objectives.wrappedValue.setIsLoading(cancelBag: cancelBag)
-        
-        
+    
         let publisher = CurrentValueSubject<LazyList<LearningObjective>, Error>(road.learningObjectives.lazyList)
             .eraseToAnyPublisher()
-            
         
         Just<Void>
             .withErrorType(Error.self)
