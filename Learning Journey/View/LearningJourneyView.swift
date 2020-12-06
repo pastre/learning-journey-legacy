@@ -59,7 +59,7 @@ private extension LeariningJourneyView {
         List(learningRoads, id: \.name) { road in
             NavigationLink (
                 destination: self.roadView(road: road),
-                tag: road.alpha3Code,
+                tag: road.name,
                 selection: self.routeBinding.learningRoad)
             {
                 Text(road.name)

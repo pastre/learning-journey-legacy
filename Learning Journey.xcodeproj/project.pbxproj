@@ -13,6 +13,7 @@
 		D7125C93257C659000DC7FA2 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125C92257C659000DC7FA2 /* Store.swift */; };
 		D7125C9B257C66F800DC7FA2 /* LearningRoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125C9A257C66F800DC7FA2 /* LearningRoadView.swift */; };
 		D7125CA0257C6DC100DC7FA2 /* LearningObjectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125C9F257C6DC100DC7FA2 /* LearningObjectiveView.swift */; };
+		D7125CB3257D378000DC7FA2 /* DefaultLearningJourneys.json in Resources */ = {isa = PBXBuildFile; fileRef = D7125CB2257D378000DC7FA2 /* DefaultLearningJourneys.json */; };
 		D72F4E5B257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F4E5A257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift */; };
 		D72F4E67257C49BA00EBBC69 /* LazyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F4E66257C49BA00EBBC69 /* LazyList.swift */; };
 		D73A753F257B181200C9E1FC /* Learning_JourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A753E257B181200C9E1FC /* Learning_JourneyApp.swift */; };
@@ -54,6 +55,7 @@
 		D7125C92257C659000DC7FA2 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		D7125C9A257C66F800DC7FA2 /* LearningRoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRoadView.swift; sourceTree = "<group>"; };
 		D7125C9F257C6DC100DC7FA2 /* LearningObjectiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningObjectiveView.swift; sourceTree = "<group>"; };
+		D7125CB2257D378000DC7FA2 /* DefaultLearningJourneys.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = DefaultLearningJourneys.json; path = "Learning Journey/DefaultLearningJourneys.json"; sourceTree = SOURCE_ROOT; };
 		D72F4E5A257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningObjectivesLocalRepository.swift; sourceTree = "<group>"; };
 		D72F4E66257C49BA00EBBC69 /* LazyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyList.swift; sourceTree = "<group>"; };
 		D73A753B257B181200C9E1FC /* Learning Journey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learning Journey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,7 @@
 				D73A7540257B181200C9E1FC /* ContentView.swift */,
 				D73A7542257B181300C9E1FC /* Assets.xcassets */,
 				D73A7547257B181300C9E1FC /* Info.plist */,
+				D7125CB2257D378000DC7FA2 /* DefaultLearningJourneys.json */,
 				D73A7544257B181300C9E1FC /* Preview Content */,
 			);
 			path = "Learning Journey";
@@ -335,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D73A7546257B181300C9E1FC /* Preview Assets.xcassets in Resources */,
+				D7125CB3257D378000DC7FA2 /* DefaultLearningJourneys.json in Resources */,
 				D73A7543257B181300C9E1FC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

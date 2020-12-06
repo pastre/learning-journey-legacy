@@ -54,10 +54,10 @@ private extension LearningRoadView {
         List(objectives, id: \.code) { objective in
             NavigationLink(
                 destination: self.objectiveView(objective: objective),
-                tag: objective.alpha3Code,
+                tag: objective.code,
                 selection: self.routeBinding.learningObjective
             ) {
-                Text(objective.name)
+                Text(objective.learningObjective)
             }
         }
     }

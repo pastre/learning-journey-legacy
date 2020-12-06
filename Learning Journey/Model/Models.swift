@@ -1,17 +1,58 @@
-struct LearningRoad: Codable, Equatable {
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
+//
+//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
+
+import Foundation
+
+// MARK: - Welcome
+struct Welcome: Codable {
+    let learningJourneys: [LearningJourney]
+    
+    enum CodingKeys: String, CodingKey {
+        case learningJourneys = "learning_journeys"
+    }
+}
+
+// MARK: - LearningJourney
+struct LearningJourney: Codable {
+    let name: String
+    let learningRoads: [LearningRoad]
+
+    enum CodingKeys: String, CodingKey {
+        case name
+        case learningRoads = "learning_roads"
+    }
+}
+
+// MARK: - LearningRoad
+struct LearningRoad: Codable {
     let name: String
     let learningObjectives: [LearningObjective]
-    let alpha3Code: Code
+
+    enum CodingKeys: String, CodingKey {
+        case name
+        case learningObjectives = "learning_objectives"
+    }
     
     typealias Code = String
 }
 
-struct LearningObjective: Codable, Equatable {
-    let name: String
-    let code: String
-    let alpha3Code: Code
+// MARK: - LearningObjective
+struct LearningObjective: Codable {
+    let code, learningObjective, topic, subjectArea: String
+    let coreElective, enterpriseDelta, cluster, shared: String
+    let novice, intermediate, proficient, expert: String
+
+    enum CodingKeys: String, CodingKey {
+        case code
+        case learningObjective = "learning_objective"
+        case topic
+        case subjectArea = "subject_area"
+        case coreElective = "core/elective"
+        case enterpriseDelta = "enterprise_delta"
+        case cluster, shared, novice, intermediate, proficient, expert
+    }
     
     typealias Code = String
 }
-
-

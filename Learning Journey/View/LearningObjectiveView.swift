@@ -14,7 +14,7 @@ struct LearningObjectiveView: View {
         AnyView(
             content
         )
-        .navigationTitle(objective.name)
+        .navigationTitle(objective.learningObjective)
     }
     private var content: some View {
         Text(objective.code)

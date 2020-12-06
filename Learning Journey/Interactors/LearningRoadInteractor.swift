@@ -17,7 +17,7 @@ struct DefaultLearningRoadInteractor: LearningRoadInteractor {
         Just<Void>
             .withErrorType(Error.self)
             .flatMap {[localRepository] in
-                localRepository.learningJourneys()
+                localRepository.learningRoads()
             }
             .sinkToLoadable { learningRoads.wrappedValue = $0 }
             .store(in: cancelBag)
