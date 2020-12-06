@@ -2,8 +2,6 @@ import SwiftUI
 import Combine
 
 struct LearningRoadView: View {
-    let learningRoad: LearningRoad
-    @State private var objectives: Loadable<LazyList<LearningObjective>>
     
     @Environment(\.injected) private var injected: DIContainer
     
@@ -14,6 +12,9 @@ struct LearningRoadView: View {
             \.routing.learningRoadView
         )
     }
+    
+    @State private var objectives: Loadable<LazyList<LearningObjective>>
+    let learningRoad: LearningRoad
     
     var body: some View {
         AnyView(
@@ -36,9 +37,6 @@ struct LearningRoadView: View {
         self._objectives = .init(initialValue: objectives)
     }
     
-    private func objectiveView(objective: LearningObjective) -> some View {
-        Text(objective.name)
-    }
     
 }
 
@@ -53,17 +51,27 @@ extension LearningRoadView {
     }
 }
 
-extension LearningRoadView {
+private extension LearningRoadView {
     func loadedView(_ objectives: LazyList<LearningObjective>) -> some View {
-        List(objectives, id: \.code) { objective in
-            Text(objective.name)
+        List(objectives, id: \.name) { objective in
+            NavigationLink(
+                destination: self.objectiveView(objective: objective),
+                tag: objective.alpha3Code,
+                selection: self.routeBinding.learningObjective
+            ) {
+                Text(objective.name)
+            }
         }
+    }
+    
+    func objectiveView(objective: LearningObjective) -> some View {
+        LearningObjectiveView(objective: objective)
     }
     
 }
 
 extension LearningRoadView {
     struct Routing: Equatable {
-        var learningObjective: LearningObjective?
+        var learningObjective: LearningObjective.Code?
     }
 }

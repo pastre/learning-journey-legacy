@@ -1,7 +1,7 @@
 import SwiftUI
 import Combine
 
-struct LearningObjectView: View {
+struct LearningObjectiveView: View {
     
     // MARK: - Enviroment
     @Environment(\.injected) private var injected: DIContainer
@@ -11,9 +11,9 @@ struct LearningObjectView: View {
     
     // MARK: - View UI
     var body: some View {
-        Group {
+        AnyView(
             content
-        }
+        )
         .navigationTitle(objective.name)
     }
     private var content: some View {

@@ -9,8 +9,8 @@ struct LearningRoad: Codable, Equatable {
 struct LearningObjective: Codable, Equatable {
     let name: String
     let code: String
+    let alpha3Code: Code
     
-    var alpha3Code: Code { code }
     typealias Code = String
 }
 
