@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7125C84257C4C0E00DC7FA2 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125C83257C4C0E00DC7FA2 /* CancelBag.swift */; };
+		D7125C89257C4CB200DC7FA2 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125C88257C4CB200DC7FA2 /* Loadable.swift */; };
+		D7125C8E257C4D4B00DC7FA2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125C8D257C4D4B00DC7FA2 /* Helpers.swift */; };
+		D72F4E5B257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F4E5A257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift */; };
+		D72F4E67257C49BA00EBBC69 /* LazyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F4E66257C49BA00EBBC69 /* LazyList.swift */; };
 		D73A753F257B181200C9E1FC /* Learning_JourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A753E257B181200C9E1FC /* Learning_JourneyApp.swift */; };
 		D73A7541257B181200C9E1FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A7540257B181200C9E1FC /* ContentView.swift */; };
 		D73A7543257B181300C9E1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D73A7542257B181300C9E1FC /* Assets.xcassets */; };
@@ -40,6 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D7125C83257C4C0E00DC7FA2 /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CancelBag.swift; path = ../../../../Downloads/CancelBag.swift; sourceTree = "<group>"; };
+		D7125C88257C4CB200DC7FA2 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		D7125C8D257C4D4B00DC7FA2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		D72F4E5A257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningObjectivesLocalRepository.swift; sourceTree = "<group>"; };
+		D72F4E66257C49BA00EBBC69 /* LazyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyList.swift; sourceTree = "<group>"; };
 		D73A753B257B181200C9E1FC /* Learning Journey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learning Journey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73A753E257B181200C9E1FC /* Learning_JourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learning_JourneyApp.swift; sourceTree = "<group>"; };
 		D73A7540257B181200C9E1FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +96,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D72F4E59257C484000EBBC69 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D72F4E5A257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D72F4E65257C499400EBBC69 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D72F4E66257C49BA00EBBC69 /* LazyList.swift */,
+				D7125C83257C4C0E00DC7FA2 /* CancelBag.swift */,
+				D7125C88257C4CB200DC7FA2 /* Loadable.swift */,
+				D7125C8D257C4D4B00DC7FA2 /* Helpers.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		D73A7532257B181200C9E1FC = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +138,8 @@
 		D73A753D257B181200C9E1FC /* Learning Journey */ = {
 			isa = PBXGroup;
 			children = (
+				D72F4E65257C499400EBBC69 /* Utils */,
+				D72F4E59257C484000EBBC69 /* Repositories */,
 				D73A75A3257B28DF00C9E1FC /* View */,
 				D73A759A257B220700C9E1FC /* Interactors */,
 				D73A7591257B213C00C9E1FC /* System */,
@@ -321,14 +352,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				D73A759C257B221D00C9E1FC /* LearningRoadInteractor.swift in Sources */,
+				D7125C8E257C4D4B00DC7FA2 /* Helpers.swift in Sources */,
 				D73A7573257B1AF600C9E1FC /* MockedModel.swift in Sources */,
+				D7125C84257C4C0E00DC7FA2 /* CancelBag.swift in Sources */,
 				D73A7584257B1D1900C9E1FC /* AppState.swift in Sources */,
+				D7125C89257C4CB200DC7FA2 /* Loadable.swift in Sources */,
 				D73A756D257B19A600C9E1FC /* Models.swift in Sources */,
 				D73A7541257B181200C9E1FC /* ContentView.swift in Sources */,
 				D73A7589257B1E2B00C9E1FC /* DependencyInjector.swift in Sources */,
 				D73A7593257B214700C9E1FC /* AppEnviroment.swift in Sources */,
+				D72F4E5B257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift in Sources */,
 				D73A75A5257B28F300C9E1FC /* LearningRoadsListView.swift in Sources */,
 				D73A753F257B181200C9E1FC /* Learning_JourneyApp.swift in Sources */,
+				D72F4E67257C49BA00EBBC69 /* LazyList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
