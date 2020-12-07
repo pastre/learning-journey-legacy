@@ -1,3 +1,5 @@
+import CoreGraphics
+
 struct AppState {
     var userData = UserData()
     var routing = ViewRouting()
@@ -17,7 +19,10 @@ extension AppState {
 }
 
 extension AppState {
-    struct System: Equatable { /* TODO */ }
+    struct System: Equatable {
+        var isActive: Bool = false
+        var keyboardHeight: CGFloat = 0
+    }
 }
 
 extension AppState {

@@ -18,6 +18,12 @@ struct LeariningJourneyView: View {
     // MARK: - Dependencies
     @State private(set) var learningRoads: Loadable<LazyList<LearningRoad>>
     
+    // MARK: - Properties
+    @State private var search = Search()
+    var keyboardHeightUpdate: AnyPublisher<CGFloat, Never> {
+        injected.appStore.updates(for: \.system.keyboardHeight)
+    }
+    
     // MARK: - Initialization
     init(
         learningRoads: Loadable<LazyList<LearningRoad>> = .notRequested
@@ -29,10 +35,18 @@ struct LeariningJourneyView: View {
     var body: some View {
         NavigationView {
             AnyView(
-                content
+                VStack {
+                    SearchBar(text: $search.searchText.onSet { _ in
+                        reloadLearningRoads()
+                    })
+                    content
+                }
             )
             .navigationBarTitle("🍎 👨‍💻 🏋️", displayMode: .large)
+            .navigationBarHidden(search.keyboardHeight > 0)
+            .animation(.easeOut(duration: 0.3))
         }
+        .onReceive(keyboardHeightUpdate) { search.keyboardHeight = $0 }
     }
     
     private var content: AnyView {
@@ -119,5 +133,13 @@ struct LeariningJourneyView: View {
 extension LeariningJourneyView {
     struct Routing: Equatable{
         var learningRoad: LearningRoad.Code?
+    }
+}
+
+
+extension LeariningJourneyView {
+    struct Search {
+        var searchText: String = ""
+        var keyboardHeight: CGFloat = 0
     }
 }

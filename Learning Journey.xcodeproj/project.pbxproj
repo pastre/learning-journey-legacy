@@ -19,6 +19,8 @@
 		D7125CC9257DA0C900DC7FA2 /* TextPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125CC8257DA0C900DC7FA2 /* TextPill.swift */; };
 		D7125CD1257DA7C500DC7FA2 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125CD0257DA7C500DC7FA2 /* Color+Extension.swift */; };
 		D7125CD6257DA7DE00DC7FA2 /* String+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125CD5257DA7DE00DC7FA2 /* String+Random.swift */; };
+		D71F8355257DE194008B87F6 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F8354257DE194008B87F6 /* SearchBar.swift */; };
+		D71F835A257DE6A7008B87F6 /* SystemsEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F8359257DE6A7008B87F6 /* SystemsEventHandler.swift */; };
 		D72F4E5B257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F4E5A257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift */; };
 		D72F4E67257C49BA00EBBC69 /* LazyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F4E66257C49BA00EBBC69 /* LazyList.swift */; };
 		D73A753F257B181200C9E1FC /* Learning_JourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A753E257B181200C9E1FC /* Learning_JourneyApp.swift */; };
@@ -66,6 +68,8 @@
 		D7125CC8257DA0C900DC7FA2 /* TextPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPill.swift; sourceTree = "<group>"; };
 		D7125CD0257DA7C500DC7FA2 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		D7125CD5257DA7DE00DC7FA2 /* String+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Random.swift"; sourceTree = "<group>"; };
+		D71F8354257DE194008B87F6 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		D71F8359257DE6A7008B87F6 /* SystemsEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemsEventHandler.swift; sourceTree = "<group>"; };
 		D72F4E5A257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningObjectivesLocalRepository.swift; sourceTree = "<group>"; };
 		D72F4E66257C49BA00EBBC69 /* LazyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyList.swift; sourceTree = "<group>"; };
 		D73A753B257B181200C9E1FC /* Learning Journey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learning Journey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				D7125CC8257DA0C900DC7FA2 /* TextPill.swift */,
+				D71F8354257DE194008B87F6 /* SearchBar.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				D73A7592257B214700C9E1FC /* AppEnviroment.swift */,
+				D71F8359257DE6A7008B87F6 /* SystemsEventHandler.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 				D7125CD1257DA7C500DC7FA2 /* Color+Extension.swift in Sources */,
 				D7125C8E257C4D4B00DC7FA2 /* Helpers.swift in Sources */,
 				D7125CA0257C6DC100DC7FA2 /* LearningObjectiveView.swift in Sources */,
+				D71F835A257DE6A7008B87F6 /* SystemsEventHandler.swift in Sources */,
 				D7125CC9257DA0C900DC7FA2 /* TextPill.swift in Sources */,
 				D7125CBB257D719E00DC7FA2 /* ImageManager.swift in Sources */,
 				D7125C9B257C66F800DC7FA2 /* LearningRoadView.swift in Sources */,
@@ -403,6 +410,7 @@
 				D73A7541257B181200C9E1FC /* ContentView.swift in Sources */,
 				D73A7589257B1E2B00C9E1FC /* DependencyInjector.swift in Sources */,
 				D73A7593257B214700C9E1FC /* AppEnviroment.swift in Sources */,
+				D71F8355257DE194008B87F6 /* SearchBar.swift in Sources */,
 				D72F4E5B257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift in Sources */,
 				D73A75A5257B28F300C9E1FC /* LearningJourneyView.swift in Sources */,
 				D7125C93257C659000DC7FA2 /* Store.swift in Sources */,
