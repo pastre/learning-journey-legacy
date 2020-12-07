@@ -31,7 +31,7 @@ Maneiro! Abre um Issue com a tag [PITCH] pra gente conversar :)
 ### Quero contribuir
 Uhul! Da um bizu no [Figma](https://www.figma.com/file/i92HNfoVmYhOIu01ShYAgT/Learning-Journey?node-id=0%3A1) se quiser melhorar aspectos de UI
 
-Ta mais pra código? Confere o [manual de contribuições]
+Ta mais pra código? Confere o [manual de contribuições](CONTRIBUTING.md)
 
 Achou um bug, tem uma proposta, algo que está errado, ou uma ideia inovadora? Abre um issue
 
