@@ -11,6 +11,16 @@ Ah, também quero aprender SwiftUI, Clean Architecture e como criar um projeto m
 
 ✔️ Alimentar app com dados do AirTable
 
+❌ Snapshot tests de Views e Components
+
+❌ Testes unitários dos módulos de sistema
+
+❌ Testes unitários dos módulos dos interactors
+
+❌ Testes unitários dos módulos dos repositórios
+
+❌ Testes unitários dos utilitários
+
 ❌ O Academer precisa setar seu nível de expertise em um objetivo
 
 ❌ O Academer precisa importar o Basic Knowledge da Academy
