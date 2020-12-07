@@ -112,6 +112,8 @@ struct LeariningJourneyView: View {
         }
         return Image(systemName: "faceids")
     }
+    
+    
 }
 
 extension LeariningJourneyView {

@@ -51,37 +51,95 @@ struct LearningRoadView: View {
     
     
     private func loadedView(_ objectives: LazyList<LearningObjective>) -> some View {
-        ScrollView {
-            LazyVGrid(
-                columns: [GridItem].init(repeating: .init(.flexible()), count: 1),
-                alignment: .center,
-                content: {
-                ForEach(objectives, id: \.code) { objective in
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 20, style: .continuous)
-                            .fill(Color.white)
-                        VStack {
-                            HStack {
-                                Text(objective.code)
-                                    .foregroundColor(Color.black)
-                            }
-                            Text(objective.learningObjective)
-                                .foregroundColor(Color.black)
-                            HStack {
-                                Text("Your level")
-                                    .foregroundColor(Color.black)
-                            }
-                        }
+        GeometryReader { geometry in
+            ScrollView {
+                LazyVGrid(
+                    columns: [GridItem].init(repeating: .init(.flexible()), count: 1),
+                    alignment: .center,
+                    content: {
+                    ForEach(objectives, id: \.code) { objective in
+                        objectiveCell(objective, geometry.size)
                     }
-                }
-                .padding(EdgeInsets.init(top: 8, leading: 24, bottom: 8, trailing: 24))
-            })
+                })
+            }
         }
         
     }
     
-    private func objectiveView1(objective: LearningObjective) -> some View {
-        LearningObjectiveView(objective: objective)
+    private func objectiveCell(_ objective: LearningObjective, _ size: CGSize) -> some View {
+        Group {
+            VStack {
+                Group {
+                    HStack {
+                        Text(objective.code)
+                            .bold()
+                            .font(.system(
+                                    size: 14,
+                                    weight: .heavy
+                            ))
+                            .foregroundColor(Color.darkGray)
+                        Spacer()
+                        self.coreElectiveTag(objective: objective)
+                    }
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 2, trailing: 0))
+                    .frame(maxWidth: .infinity)
+                    
+                    Text(objective.learningObjective)
+                        .bold()
+                        .foregroundColor(Color.black)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .layoutPriority(0.5)
+                    
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Current level")
+                                .bold()
+                                .foregroundColor(Color.darkGray)
+                                .font(.system(size: 12))
+                            Button("Set your level") {
+                                print("SETTING")
+                            }
+                        }
+                        
+                        Spacer()
+                        
+                        VStack(alignment: .trailing) {
+                            Text("Goal")
+                                .bold()
+                                .foregroundColor(Color.darkGray)
+                                .font(.system(size: 12))
+                            Button {
+                                print("Hi!")
+                            } label: {
+                                TextPill.expert
+                            }
+                        }
+                    }
+                    .padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0))
+                    .frame(maxWidth: .infinity)
+                    
+                }
+            }
+            .padding(16)
+            .frame(width: size.width * 0.9)
+        }
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+        
+    }
+    
+    private func coreElectiveTag(objective: LearningObjective) -> some View {
+        switch objective.coreElective {
+        case "Elective": return TextPill.elective
+        case "Core": return TextPill.core
+        default: break
+        }
+        return TextPill(
+            title: objective.coreElective,
+            backgroundColor: Color.init(hex: 0xA100DA),
+            titleColor: .white
+        )
     }
     
     // MARK: - Helpers
@@ -99,6 +157,12 @@ extension LearningRoadView {
 
 
 #if DEBUG
+struct LearningRoadView1_Previews: PreviewProvider {
+    static var previews: some View {
+        Text("asd")
+            .fixedSize(horizontal: false, vertical: true)
+    }
+}
 
 struct LearningRoadView_Previews: PreviewProvider {
     static var previews: some View {

@@ -7,6 +7,7 @@ struct TextPill: View {
     
     var body: some View {
         Text(title)
+            .font(.system(size: 14))
             .bold()
             .foregroundColor(titleColor)
             .padding(EdgeInsets(
