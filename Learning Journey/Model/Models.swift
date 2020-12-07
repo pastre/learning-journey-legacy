@@ -56,3 +56,25 @@ struct LearningObjective: Codable {
     
     typealias Code = String
 }
+
+#if DEBUG
+
+extension LearningObjective {
+    static let random = LearningObjective (
+        code: .random(),
+        learningObjective: .random(),
+        topic: .random(),
+        subjectArea: .random(),
+        coreElective: .random(),
+        enterpriseDelta: .random(),
+        cluster: .random(),
+        shared: .random(),
+        novice: .random(),
+        intermediate: .random(),
+        proficient: .random(),
+        expert: .random()
+    )
+}
+
+#endif
+

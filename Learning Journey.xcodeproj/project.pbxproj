@@ -16,6 +16,9 @@
 		D7125CB3257D378000DC7FA2 /* DefaultLearningJourneys.json in Resources */ = {isa = PBXBuildFile; fileRef = D7125CB2257D378000DC7FA2 /* DefaultLearningJourneys.json */; };
 		D7125CBB257D719E00DC7FA2 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125CBA257D719E00DC7FA2 /* ImageManager.swift */; };
 		D7125CC3257D786E00DC7FA2 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125CC2257D786E00DC7FA2 /* ColorManager.swift */; };
+		D7125CC9257DA0C900DC7FA2 /* TextPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125CC8257DA0C900DC7FA2 /* TextPill.swift */; };
+		D7125CD1257DA7C500DC7FA2 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125CD0257DA7C500DC7FA2 /* Color+Extension.swift */; };
+		D7125CD6257DA7DE00DC7FA2 /* String+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125CD5257DA7DE00DC7FA2 /* String+Random.swift */; };
 		D72F4E5B257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F4E5A257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift */; };
 		D72F4E67257C49BA00EBBC69 /* LazyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F4E66257C49BA00EBBC69 /* LazyList.swift */; };
 		D73A753F257B181200C9E1FC /* Learning_JourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A753E257B181200C9E1FC /* Learning_JourneyApp.swift */; };
@@ -60,6 +63,9 @@
 		D7125CB2257D378000DC7FA2 /* DefaultLearningJourneys.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = DefaultLearningJourneys.json; path = "Learning Journey/DefaultLearningJourneys.json"; sourceTree = SOURCE_ROOT; };
 		D7125CBA257D719E00DC7FA2 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		D7125CC2257D786E00DC7FA2 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		D7125CC8257DA0C900DC7FA2 /* TextPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPill.swift; sourceTree = "<group>"; };
+		D7125CD0257DA7C500DC7FA2 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		D7125CD5257DA7DE00DC7FA2 /* String+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Random.swift"; sourceTree = "<group>"; };
 		D72F4E5A257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningObjectivesLocalRepository.swift; sourceTree = "<group>"; };
 		D72F4E66257C49BA00EBBC69 /* LazyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyList.swift; sourceTree = "<group>"; };
 		D73A753B257B181200C9E1FC /* Learning Journey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learning Journey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D7125CC7257DA0B400DC7FA2 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				D7125CC8257DA0C900DC7FA2 /* TextPill.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		D72F4E59257C484000EBBC69 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +140,8 @@
 				D7125C92257C659000DC7FA2 /* Store.swift */,
 				D7125CBA257D719E00DC7FA2 /* ImageManager.swift */,
 				D7125CC2257D786E00DC7FA2 /* ColorManager.swift */,
+				D7125CD0257DA7C500DC7FA2 /* Color+Extension.swift */,
+				D7125CD5257DA7DE00DC7FA2 /* String+Random.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -153,6 +169,7 @@
 		D73A753D257B181200C9E1FC /* Learning Journey */ = {
 			isa = PBXGroup;
 			children = (
+				D7125CC7257DA0B400DC7FA2 /* Component */,
 				D73A7590257B1FE000C9E1FC /* Injection */,
 				D73A759A257B220700C9E1FC /* Interactors */,
 				D73A7571257B1AE200C9E1FC /* Model */,
@@ -371,8 +388,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D73A759C257B221D00C9E1FC /* LearningRoadInteractor.swift in Sources */,
+				D7125CD1257DA7C500DC7FA2 /* Color+Extension.swift in Sources */,
 				D7125C8E257C4D4B00DC7FA2 /* Helpers.swift in Sources */,
 				D7125CA0257C6DC100DC7FA2 /* LearningObjectiveView.swift in Sources */,
+				D7125CC9257DA0C900DC7FA2 /* TextPill.swift in Sources */,
 				D7125CBB257D719E00DC7FA2 /* ImageManager.swift in Sources */,
 				D7125C9B257C66F800DC7FA2 /* LearningRoadView.swift in Sources */,
 				D73A7573257B1AF600C9E1FC /* MockedModel.swift in Sources */,
@@ -387,6 +406,7 @@
 				D72F4E5B257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift in Sources */,
 				D73A75A5257B28F300C9E1FC /* LearningJourneyView.swift in Sources */,
 				D7125C93257C659000DC7FA2 /* Store.swift in Sources */,
+				D7125CD6257DA7DE00DC7FA2 /* String+Random.swift in Sources */,
 				D73A753F257B181200C9E1FC /* Learning_JourneyApp.swift in Sources */,
 				D72F4E67257C49BA00EBBC69 /* LazyList.swift in Sources */,
 			);
