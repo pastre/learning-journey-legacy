@@ -1,5 +1,5 @@
 # Learning Journey
-Esse app é a minha maneira de melhorar a experiência cotidiana de atualizar a Learning Journey
+Esse app é a minha proposta para melhorar a experiência cotidiana de atualizar a Learning Journey
 
 Ah, também quero aprender SwiftUI, Clean Architecture e como criar um projeto maneiro open source
 
