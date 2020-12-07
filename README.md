@@ -1,7 +1,7 @@
 # Learning Journey
 Esse app é a minha maneira de melhorar a experiência cotidiana de atualizar a Learning Journey
 
-Ah, também quero aprender SwiftUI e Clean Architecture
+Ah, também quero aprender SwiftUI, Clean Architecture e como criar um projeto maneiro open source
 
 ### Milestones
 
@@ -25,12 +25,17 @@ Ah, também quero aprender SwiftUI e Clean Architecture
 
 ❌ Os mentores precisam acompanhar o progresso dos alunos
 
+### Tem uma ideia?
+Maneiro! Abre um Issue com a tag [PITCH] pra gente conversar :)
 
-### Design
+### Quero contribuir
+Uhul! Da um bizu no [Figma](https://www.figma.com/file/i92HNfoVmYhOIu01ShYAgT/Learning-Journey?node-id=0%3A1 se quiser melhorar aspectos de UI
 
-Feel free to comment, suggest or edit [this Figma file](https://www.figma.com/file/i92HNfoVmYhOIu01ShYAgT/Learning-Journey?node-id=0%3A1
-)
-### Architecture
+Ta mais pra código? Confere o [manual de contribuições]
+
+Achou um bug, tem uma proposta, algo que está errado, ou uma ideia inovadora? Abre um issue
+
+### Arquitetura
 
 Pensei em usar VIPER, mas a navegação em SwiftUI dispensa o uso de um `Router`
 
