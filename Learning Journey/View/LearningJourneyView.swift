@@ -116,8 +116,13 @@ struct LeariningJourneyView: View {
     
 }
 
+extension LearningRoad {
+    typealias Code = String
+}
+
 extension LeariningJourneyView {
     struct Routing: Equatable{
         var learningRoad: LearningRoad.Code?
     }
 }
+

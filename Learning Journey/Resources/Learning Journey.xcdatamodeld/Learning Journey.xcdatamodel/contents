@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B50" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="LearningJourney" representedClassName=".LearningJourney" syncable="YES">
+        <attribute name="name" attributeType="String"/>
+    </entity>
+    <entity name="LearningObjective" representedClassName=".LearningObjective" syncable="YES">
+        <attribute name="cluster" attributeType="String"/>
+        <attribute name="code" attributeType="String"/>
+        <attribute name="enterpriseDelta" attributeType="String"/>
+        <attribute name="expertDescription" attributeType="String"/>
+        <attribute name="intermediateDescription" attributeType="String"/>
+        <attribute name="isBasic" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isCore" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="learningObjective" attributeType="String"/>
+        <attribute name="noviceDescription" attributeType="String"/>
+        <attribute name="proficientDescription" attributeType="String"/>
+        <attribute name="shared" attributeType="String"/>
+        <attribute name="topic" attributeType="String"/>
+        <relationship name="current" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LearningProgress"/>
+        <relationship name="goal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LearningProgress"/>
+        <relationship name="learningRoad" maxCount="1" deletionRule="Nullify" destinationEntity="LearningRoad"/>
+    </entity>
+    <entity name="LearningProgress" representedClassName=".LearningProgress" syncable="YES">
+        <attribute name="expert" attributeType="String"/>
+        <attribute name="intermediate" attributeType="String"/>
+        <attribute name="novice" attributeType="String"/>
+        <attribute name="proficient" attributeType="String"/>
+    </entity>
+    <entity name="LearningRoad" representedClassName=".LearningRoad" syncable="YES">
+        <attribute name="name" attributeType="String"/>
+        <relationship name="learningJourney" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LearningJourney"/>
+    </entity>
+    <elements>
+        <element name="LearningJourney" positionX="83.0155029296875" positionY="468.656005859375" width="128" height="44"/>
+        <element name="LearningObjective" positionX="64.9266357421875" positionY="-5.30841064453125" width="128" height="254"/>
+        <element name="LearningProgress" positionX="-34.5240478515625" positionY="354.27587890625" width="128" height="89"/>
+        <element name="LearningRoad" positionX="180.9888916015625" positionY="326.6544799804688" width="128" height="59"/>
+    </elements>
+</model>

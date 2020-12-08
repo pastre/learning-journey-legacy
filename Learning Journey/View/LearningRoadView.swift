@@ -130,16 +130,7 @@ struct LearningRoadView: View {
     }
     
     private func coreElectiveTag(objective: LearningObjective) -> some View {
-        switch objective.coreElective {
-        case "Elective": return TextPill.elective
-        case "Core": return TextPill.core
-        default: break
-        }
-        return TextPill(
-            title: objective.coreElective,
-            backgroundColor: Color.init(hex: 0xA100DA),
-            titleColor: .white
-        )
+        objective.isCore ? TextPill.core : TextPill.elective
     }
     
     // MARK: - Helpers
@@ -149,6 +140,9 @@ struct LearningRoadView: View {
     
 }
 
+extension LearningObjective {
+    typealias Code = String
+}
 extension LearningRoadView {
     struct Routing: Equatable {
         var learningObjective: LearningObjective.Code?
@@ -166,18 +160,9 @@ struct LearningRoadView1_Previews: PreviewProvider {
 
 struct LearningRoadView_Previews: PreviewProvider {
     static var previews: some View {
-        LearningRoadView(learningRoad: .init(name: "Fake", learningObjectives: [
-            .random,
-            .random,
-            .random,
-            .random,
-            ]),
-            objectives: .loaded([
-                .random,
-                .random,
-                .random,
-                .random,
-            ].lazyList
+        LearningRoadView(
+                learningRoad: .init(),
+                objectives: .loaded([].lazyList
             )
         )
     }

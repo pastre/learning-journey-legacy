@@ -27,13 +27,12 @@ struct DefaultLearningRoadInteractor: LearningRoadInteractor {
         
         let cancelBag = CancelBag()
         objectives.wrappedValue.setIsLoading(cancelBag: cancelBag)
-    
-        let publisher = CurrentValueSubject<LazyList<LearningObjective>, Error>(road.learningObjectives.lazyList)
-            .eraseToAnyPublisher()
         
         Just<Void>
             .withErrorType(Error.self)
-            .flatMap { publisher }
+            .flatMap { [localRepository] in
+                localRepository.learningObjectives(for: road)
+            }
             .sinkToLoadable { objectives.wrappedValue = $0 }
             .store(in: cancelBag)
     }

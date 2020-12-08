@@ -3,40 +3,36 @@ import Foundation
 
 protocol LearningRoadsLocalRepository {
     func learningRoads() -> AnyPublisher<LazyList<LearningRoad>, Error>
+    func learningObjectives(for road: LearningRoad) -> AnyPublisher<LazyList<LearningObjective>, Error>
 }
 
-struct MockLearningRoadsLocalRepository: LearningRoadsLocalRepository {
+struct CoreDataLearningRoadsLocalRepository: LearningRoadsLocalRepository {
+    
+    private let databaseFacade: CoreDataFacade
+    
+    init(databaseFacade: CoreDataFacade) {
+        self.databaseFacade = databaseFacade
+    }
+    
     func learningRoads() -> AnyPublisher<LazyList<LearningRoad>, Error> {
         
-        let roads = loadJourneysFromLocalJSON() ?? []
+        guard let journey = databaseFacade.fetchLearningJourneys()?.first
+        else { return CurrentValueSubject(.empty).eraseToAnyPublisher() }
+        guard let roads = databaseFacade.fetchLearningRoads(for: journey)
+        else { return CurrentValueSubject(.empty).eraseToAnyPublisher() }
         
-        return CurrentValueSubject(
-            roads.lazyList
-        )
-        .eraseToAnyPublisher()
+        return CurrentValueSubject(roads.lazyList)
+            .eraseToAnyPublisher()
+        
     }
     
-    enum Errors: Error {
-        case notLoaded
-    }
-    
-    private func loadJourneysFromLocalJSON() -> [LearningRoad]? {
-        guard let path = Bundle.main.path(forResource: "", ofType: "json")
-        else { return nil }
-        
-        do {
-          let data = try Data(
-            contentsOf: URL(fileURLWithPath: path),
-            options: .mappedIfSafe
-          )
-            let transformed = try JSONDecoder().decode(Welcome.self, from: data)
-            return transformed.learningJourneys.first?.learningRoads
-        } catch let error {
-            print("ERROR WHEN PARSING JSON", error)
-        }
-        
-        
-        return nil
+    func learningObjectives(for road: LearningRoad) -> AnyPublisher<LazyList<LearningObjective>, Error> {
+        let objectives = databaseFacade.fetchLearningObjectives(for: road)?.lazyList ?? .empty
+        return CurrentValueSubject(objectives)
+            .eraseToAnyPublisher()
     }
 }
 
+enum A: Error {
+    case a
+}
