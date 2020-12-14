@@ -1,4 +1,6 @@
 # Learning Journey
+[![codebeat badge](https://codebeat.co/badges/54d1c65f-27b4-4ae1-96c8-5f6576be12b9)](https://codebeat.co/projects/github-com-pastre-learning-journey-main)
+
 Esse app é a minha proposta para melhorar a experiência cotidiana de atualizar a Learning Journey
 
 Ah, também quero aprender SwiftUI, Clean Architecture e como criar um projeto maneiro open source
