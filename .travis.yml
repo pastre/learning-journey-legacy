@@ -1,0 +1,4 @@
+os: osx
+os_image: xcode12.2
+language: swift
+script: xcodebuild clean build test -project Learning\ Journey/Learning\ Journey.xcodeproj -scheme "Learning Journey" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=14.2,name=iPhone 8" CODE_SIGNING_REQUIRED=NO
