@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D7125C84257C4C0E00DC7FA2 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125C83257C4C0E00DC7FA2 /* CancelBag.swift */; };
 		D7125C89257C4CB200DC7FA2 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125C88257C4CB200DC7FA2 /* Loadable.swift */; };
 		D7125C8E257C4D4B00DC7FA2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125C8D257C4D4B00DC7FA2 /* Helpers.swift */; };
 		D7125C93257C659000DC7FA2 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125C92257C659000DC7FA2 /* Store.swift */; };
@@ -46,6 +45,7 @@
 		D7C00526257F83F900434A34 /* LearningJourney+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C0051E257F83F900434A34 /* LearningJourney+CoreDataProperties.swift */; };
 		D7C0052E257F86DC00434A34 /* CoreDataFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C0052D257F86DC00434A34 /* CoreDataFacade.swift */; };
 		D7C005C1257F9FB000434A34 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C005C0257F9FB000434A34 /* CoreDataStack.swift */; };
+		D7C005E2258973ED00434A34 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C005E1258973ED00434A34 /* CancelBag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +66,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D7125C83257C4C0E00DC7FA2 /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CancelBag.swift; path = ../../../../Downloads/CancelBag.swift; sourceTree = "<group>"; };
 		D7125C88257C4CB200DC7FA2 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		D7125C8D257C4D4B00DC7FA2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D7125C92257C659000DC7FA2 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -111,6 +110,7 @@
 		D7C0051E257F83F900434A34 /* LearningJourney+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningJourney+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D7C0052D257F86DC00434A34 /* CoreDataFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFacade.swift; sourceTree = "<group>"; };
 		D7C005C0257F9FB000434A34 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D7C005E1258973ED00434A34 /* CancelBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +157,8 @@
 		D72F4E65257C499400EBBC69 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D7C005E1258973ED00434A34 /* CancelBag.swift */,
 				D72F4E66257C49BA00EBBC69 /* LazyList.swift */,
-				D7125C83257C4C0E00DC7FA2 /* CancelBag.swift */,
 				D7125C88257C4CB200DC7FA2 /* Loadable.swift */,
 				D7125C8D257C4D4B00DC7FA2 /* Helpers.swift */,
 				D7125C92257C659000DC7FA2 /* Store.swift */,
@@ -456,11 +456,11 @@
 				D7125CC9257DA0C900DC7FA2 /* TextPill.swift in Sources */,
 				D7C005C1257F9FB000434A34 /* CoreDataStack.swift in Sources */,
 				D7C00520257F83F900434A34 /* LearningObjective+CoreDataProperties.swift in Sources */,
+				D7C005E2258973ED00434A34 /* CancelBag.swift in Sources */,
 				D7C0051F257F83F900434A34 /* LearningObjective+CoreDataClass.swift in Sources */,
 				D7125CBB257D719E00DC7FA2 /* ImageManager.swift in Sources */,
 				D7125C9B257C66F800DC7FA2 /* LearningRoadView.swift in Sources */,
 				D73A7573257B1AF600C9E1FC /* MockedModel.swift in Sources */,
-				D7125C84257C4C0E00DC7FA2 /* CancelBag.swift in Sources */,
 				D7125CC3257D786E00DC7FA2 /* ColorManager.swift in Sources */,
 				D73A7584257B1D1900C9E1FC /* AppState.swift in Sources */,
 				D7125C89257C4CB200DC7FA2 /* Loadable.swift in Sources */,
