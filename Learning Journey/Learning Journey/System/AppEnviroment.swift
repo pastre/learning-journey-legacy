@@ -53,7 +53,8 @@ extension AppEnvironment {
     }
 
     private static func configureDefaultDataIfNeeded(_ facade: CoreDataFacade) {
-        guard // facade.fetchLearningJourneys() == nil,
+        let areDefaultLearningJourneysConfigured = facade.fetchLearningJourneys()?.isEmpty ?? true
+        guard areDefaultLearningJourneysConfigured,
             let url = Bundle.main.url(
                 forResource: "FlatLearningJourney",
                 withExtension: ".json"
