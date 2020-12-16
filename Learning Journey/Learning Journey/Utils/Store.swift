@@ -22,8 +22,7 @@ extension Store {
     }
 
     func updates<Value>(for keyPath: KeyPath<Output, Value>) ->
-        AnyPublisher<Value, Failure> where Value: Equatable
-    {
+        AnyPublisher<Value, Failure> where Value: Equatable {
         return map(keyPath).removeDuplicates().eraseToAnyPublisher()
     }
 }
@@ -32,8 +31,7 @@ extension Store {
 
 extension Binding where Value: Equatable {
     func dispatched<State>(to state: Store<State>,
-                           _ keyPath: WritableKeyPath<State, Value>) -> Self
-    {
+                           _ keyPath: WritableKeyPath<State, Value>) -> Self {
         return onSet { state[keyPath] = $0 }
     }
 }

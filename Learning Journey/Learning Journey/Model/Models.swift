@@ -5,7 +5,7 @@
 //
 // import Foundation
 //
-//// MARK: - Welcome
+// MARK: - Welcome
 // struct Welcome: Codable {
 //    let learningJourneys: [LearningJourney]
 //
@@ -14,7 +14,7 @@
 //    }
 // }
 //
-//// MARK: - LearningJourney
+// MARK: - LearningJourney
 // struct LearningJourney: Codable {
 //    let name: String
 //    let learningRoads: [LearningRoad]
@@ -25,7 +25,7 @@
 //    }
 // }
 //
-//// MARK: - LearningRoad
+// MARK: - LearningRoad
 // struct LearningRoad: Codable {
 //    let name: String
 //    let learningObjectives: [LearningObjective]
@@ -38,7 +38,7 @@
 //    typealias Code = String
 // }
 //
-//// MARK: - LearningObjective
+// MARK: - LearningObjective
 // struct LearningObjective: Codable {
 //    let code, learningObjective, topic, subjectArea: String
 //    let coreElective, enterpriseDelta, cluster, shared: String
@@ -57,7 +57,7 @@
 //    typealias Code = String
 // }
 //
-//// MARK: - Learning Progress
+// MARK: - Learning Progress
 // enum ProgressLevel: String, Codable {
 //    case novice
 //    case intermediate

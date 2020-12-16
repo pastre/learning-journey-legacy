@@ -1,0 +1,100 @@
+disabled_rules:
+  - line_length
+  - shorthand_operator
+  - trailing_whitespace
+  - identifier_name
+  - missing_docs
+  - file_length
+  - implicit_return
+  - trailing_closure
+  ## Enable after Buck is done
+  - cyclomatic_complexity
+  - type_name
+  - function_parameter_count
+  - force_try
+  - type_body_length
+  - function_body_length
+  - trailing_comma
+  #####
+
+opt_in_rules:
+  - force_unwrapping
+  - anyobject_protocol
+  - closure_end_indentation
+  - closure_spacing
+  - collection_alignment
+  - contains_over_first_not_nil
+  - empty_string
+  - empty_xctest_method
+  - explicit_failure_calls
+  - explicit_init
+  - fallthrough
+  - fatal_error_message
+  - first_where
+  - identical_operands
+  - implicitly_unwrapped_optional
+  - joined_default_parameter
+  - let_var_whitespace
+  - literal_expression_end_indentation
+  - multiline_arguments
+  - multiline_literal_brackets
+  - multiline_parameters
+  - multiline_parameters_brackets
+  - nimble_operator
+  - object_literal
+  - operator_usage_whitespace
+  - overridden_super_call
+  - override_in_extension
+  - pattern_matching_keywords
+  - prohibited_super_call
+  - quick_discouraged_focused_test
+  - quickspec_class_name
+  - redundant_nil_coalescing
+  - return_arrow_whitespace
+  - single_test_class
+  - sorted_first_last
+  - static_operator
+  - switch_case_on_newline
+  - trailing_closure
+  - unneeded_parentheses_in_closure_argument
+  - untyped_error_in_catch
+  - vertical_parameter_alignment_on_call
+  - yoda_condition
+
+analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
+  - explicit_self
+
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+# rules that have both warning and error levels, can set just the warning level
+# implicitly
+line_length: 130
+# they can set both implicitly with an array
+type_body_length:
+  - 300 # warning
+  - 400 # error
+# or they can set both explicitly
+file_length:
+  warning: 500
+  error: 1200
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 1 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 50
+  excluded: iPhone # excluded via string
+identifier_name:
+  allowed_symbols: "_"
+  min_length: # only min_length
+    error: 1 # only error
+    warning: 1
+  excluded: # excluded via string array
+    - id
+    - URL
+    - GlobalAPIKey
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji, sonarqube, markdown)
