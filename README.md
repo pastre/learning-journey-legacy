@@ -14,7 +14,7 @@ Ah, também quero aprender SwiftUI, Clean Architecture e como criar um projeto m
 
 ✔️ Alimentar app com dados do AirTable
 
-❌ Swiftlint + swiftformat
+✔️ Swiftlint + swiftformat
 
 ❌ Snapshot tests de Views e Components
 
