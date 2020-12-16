@@ -6,10 +6,7 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
-
-public class LearningJourney: NSManagedObject {
-
-}
+public class LearningJourney: NSManagedObject {}

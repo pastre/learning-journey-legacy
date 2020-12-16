@@ -4,7 +4,7 @@ protocol CoreDataFacade {
     func fetchLearningObjectives(for road: LearningRoad) -> [LearningObjective]?
     func fetchLearningRoads(for journey: LearningJourney) -> [LearningRoad]?
     func fetchLearningJourneys() -> [LearningJourney]?
-    
+
     func addLearningJourney(journey: String)
     func addLearningRoad(
         name: String,
@@ -32,11 +32,11 @@ protocol CoreDataFacade {
 struct DefaultCoreDataFacade: CoreDataFacade {
     private let coreDataStack: CoreDataStack
     private var context: NSManagedObjectContext { coreDataStack.persistentContainer.viewContext }
-    
+
     init(coreDataStack: CoreDataStack) {
         self.coreDataStack = coreDataStack
     }
-    
+
     func addLearningJourney(journey name: String) {
         let journey = NSEntityDescription.insertNewObject(
             forEntityName: "LearningJourney",
@@ -45,7 +45,7 @@ struct DefaultCoreDataFacade: CoreDataFacade {
         journey.setValue(name, forKey: "name")
         try! context.save()
     }
-    
+
     func addLearningRoad(
         name: String,
         journey: LearningJourney
@@ -58,7 +58,7 @@ struct DefaultCoreDataFacade: CoreDataFacade {
         road.setValue(journey, forKey: "learningJourney")
         try! context.save()
     }
-    
+
     func addObjective(
         cluster: String,
         code: String,
@@ -76,12 +76,11 @@ struct DefaultCoreDataFacade: CoreDataFacade {
         goal: String?,
         learningRoad: LearningRoad
     ) {
-    
         let objective = NSEntityDescription.insertNewObject(
             forEntityName: "LearningObjective",
             into: context
         )
-        
+
         objective.setValue(cluster, forKey: "cluster")
         objective.setValue(code, forKey: "code")
         objective.setValue(enterpriseDelta, forKey: "enterpriseDelta")
@@ -97,24 +96,24 @@ struct DefaultCoreDataFacade: CoreDataFacade {
         objective.setValue(current, forKey: "current")
         objective.setValue(goal, forKey: "goal")
         objective.setValue(learningRoad, forKey: "learningRoad")
-        
+
         try! context.save()
     }
-    
+
     func fetchLearningObjectives(for road: LearningRoad) -> [LearningObjective]? {
-        // TODO query with filter
+        // TODO: query with filter
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LearningObjective")
         let allObjectives = try? context.fetch(fetchRequest) as? [LearningObjective]
         return allObjectives?.filter { $0.learningRoad == road }
     }
-    
+
     func fetchLearningRoads(for journey: LearningJourney) -> [LearningRoad]? {
-        // TODO query with filter
+        // TODO: query with filter
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LearningRoad")
         let allRoads = try? context.fetch(fetchRequest) as? [LearningRoad]
         return allRoads?.filter { $0.learningJourney == journey }
     }
-    
+
     func fetchLearningJourneys() -> [LearningJourney]? {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LearningJourney")
         return try? context.fetch(fetchRequest) as? [LearningJourney]

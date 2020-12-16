@@ -6,23 +6,18 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
-
-extension LearningProgress {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<LearningProgress> {
+public extension LearningProgress {
+    @nonobjc class func fetchRequest() -> NSFetchRequest<LearningProgress> {
         return NSFetchRequest<LearningProgress>(entityName: "LearningProgress")
     }
 
-    @NSManaged public var expert: String?
-    @NSManaged public var intermediate: String?
-    @NSManaged public var novice: String?
-    @NSManaged public var proficient: String?
-
+    @NSManaged var expert: String?
+    @NSManaged var intermediate: String?
+    @NSManaged var novice: String?
+    @NSManaged var proficient: String?
 }
 
-extension LearningProgress : Identifiable {
-
-}
+extension LearningProgress: Identifiable {}

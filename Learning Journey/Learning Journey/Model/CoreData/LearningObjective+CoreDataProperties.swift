@@ -6,32 +6,30 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
-
-extension LearningObjective {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<LearningObjective> {
+public extension LearningObjective {
+    @nonobjc class func fetchRequest() -> NSFetchRequest<LearningObjective> {
         return NSFetchRequest<LearningObjective>(entityName: "LearningObjective")
     }
 
-    @NSManaged public var cluster: String
-    @NSManaged public var code: String
-    @NSManaged public var enterpriseDelta: String
-    @NSManaged public var expertDescription: String
-    @NSManaged public var intermediateDescription: String
-    @NSManaged public var isBasic: Bool
-    @NSManaged public var isCore: Bool
-    @NSManaged public var learningObjective: String
-    @NSManaged public var noviceDescription: String
-    @NSManaged public var proficientDescription: String
-    @NSManaged public var shared: String
-    @NSManaged public var topic: String
-    @NSManaged public var current: LearningProgress?
-    @NSManaged public var goal: LearningProgress?
-    @NSManaged public var learningRoad: LearningRoad
-    
+    @NSManaged var cluster: String
+    @NSManaged var code: String
+    @NSManaged var enterpriseDelta: String
+    @NSManaged var expertDescription: String
+    @NSManaged var intermediateDescription: String
+    @NSManaged var isBasic: Bool
+    @NSManaged var isCore: Bool
+    @NSManaged var learningObjective: String
+    @NSManaged var noviceDescription: String
+    @NSManaged var proficientDescription: String
+    @NSManaged var shared: String
+    @NSManaged var topic: String
+    @NSManaged var current: LearningProgress?
+    @NSManaged var goal: LearningProgress?
+    @NSManaged var learningRoad: LearningRoad
+
     /*
      "current": null,
      "isCore": true,
@@ -40,9 +38,6 @@ extension LearningObjective {
      "learningObjective": "Use macOS applications and technologies for software development and design.",
      "goal": null
      */
-
 }
 
-extension LearningObjective : Identifiable {
-
-}
+extension LearningObjective: Identifiable {}

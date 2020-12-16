@@ -6,26 +6,26 @@ struct AppState {
 }
 
 extension AppState {
-    struct UserData: Equatable { /* TODO */ }
+    struct UserData: Equatable { /* TODO: */ }
 }
 
 extension AppState {
     struct ViewRouting: Equatable {
         var learningRoadsListView = LeariningJourneyView.Routing()
         var learningRoadView = LearningRoadView.Routing()
-   }
+    }
 }
 
 extension AppState {
-    struct System: Equatable { /* TODO */ }
+    struct System: Equatable { /* TODO: */ }
 }
 
 extension AppState {
-    struct Permissions: Equatable { /* TODO */ }
+    struct Permissions: Equatable { /* TODO: */ }
 }
 
 #if DEBUG
-extension AppState {
-    static let preview = AppState()
-}
+    extension AppState {
+        static let preview = AppState()
+    }
 #endif

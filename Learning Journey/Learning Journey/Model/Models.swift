@@ -3,19 +3,19 @@
 ////
 ////   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 //
-//import Foundation
+// import Foundation
 //
 //// MARK: - Welcome
-//struct Welcome: Codable {
+// struct Welcome: Codable {
 //    let learningJourneys: [LearningJourney]
-//    
+//
 //    enum CodingKeys: String, CodingKey {
 //        case learningJourneys = "learning_journeys"
 //    }
-//}
+// }
 //
 //// MARK: - LearningJourney
-//struct LearningJourney: Codable {
+// struct LearningJourney: Codable {
 //    let name: String
 //    let learningRoads: [LearningRoad]
 //
@@ -23,10 +23,10 @@
 //        case name
 //        case learningRoads = "learning_roads"
 //    }
-//}
+// }
 //
 //// MARK: - LearningRoad
-//struct LearningRoad: Codable {
+// struct LearningRoad: Codable {
 //    let name: String
 //    let learningObjectives: [LearningObjective]
 //
@@ -34,12 +34,12 @@
 //        case name
 //        case learningObjectives = "learning_objectives"
 //    }
-//    
+//
 //    typealias Code = String
-//}
+// }
 //
 //// MARK: - LearningObjective
-//struct LearningObjective: Codable {
+// struct LearningObjective: Codable {
 //    let code, learningObjective, topic, subjectArea: String
 //    let coreElective, enterpriseDelta, cluster, shared: String
 //    let novice, intermediate, proficient, expert: String
@@ -53,23 +53,23 @@
 //        case enterpriseDelta = "enterprise_delta"
 //        case cluster, shared, novice, intermediate, proficient, expert
 //    }
-//    
+//
 //    typealias Code = String
-//}
+// }
 //
 //// MARK: - Learning Progress
-//enum ProgressLevel: String, Codable {
+// enum ProgressLevel: String, Codable {
 //    case novice
 //    case intermediate
 //    case proficient
 //    case expert
-//}
-//struct LearningProgress: Codable {
+// }
+// struct LearningProgress: Codable {
 //    let learningObjectiveCode: String
 //    let progress: ProgressLevel
-//}
+// }
 //
-//struct FlatLearningObjective {
+// struct FlatLearningObjective {
 //    let code: String
 //    let topic: String
 //    let cluster: String
@@ -81,17 +81,17 @@
 //    let roadName: String
 //    let enterpriseDelta: String
 //    let learningObjective: String
-//    
+//
 //    let isCore: Bool
 //    let isBasic: Bool
-//    
+//
 //    let current: ProgressLevel?
 //    let goal: ProgressLevel?
-//}
+// }
 //
-//#if DEBUG
+// #if DEBUG
 //
-//extension LearningObjective {
+// extension LearningObjective {
 //    static let random = LearningObjective (
 //        code: .random(),
 //        learningObjective: .random(),
@@ -106,16 +106,16 @@
 //        proficient: .random(),
 //        expert: .random()
 //    )
-//}
+// }
 //
-//#endif
+// #endif
 //
 //
-//extension LearningObjective: Codable {}
+// extension LearningObjective: Codable {}
 //
-//extension LearningRoad: Codable {}
+// extension LearningRoad: Codable {}
 //
-//extension LearningProgress: Codable {}
+// extension LearningProgress: Codable {}
 //
-//extension LearningJourney: Codable {}
+// extension LearningJourney: Codable {}
 //

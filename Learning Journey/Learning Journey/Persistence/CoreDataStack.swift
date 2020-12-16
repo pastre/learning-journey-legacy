@@ -2,20 +2,20 @@ import CoreData
 
 protocol CoreDataStack {
     var persistentContainer: NSPersistentContainer { get }
-    func saveContext ()
+    func saveContext()
     func clearDB()
 }
 
 class DefaultCoreDataStack: CoreDataStack {
     let persistentContainer: NSPersistentContainer = {
         /*
-         The persistent container for the application. This implementation
-         creates and returns a container, having loaded the store for the
-         application to it. This property is optional since there are legitimate
-         error conditions that could cause the creation of the store to fail.
-        */
+          The persistent container for the application. This implementation
+          creates and returns a container, having loaded the store for the
+          application to it. This property is optional since there are legitimate
+          error conditions that could cause the creation of the store to fail.
+         */
         let container = NSPersistentContainer(name: "Learning Journey")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        container.loadPersistentStores(completionHandler: { _, error in
             if let error = error as NSError? {
                 /*
                  Typical reasons for an error here include:
@@ -33,19 +33,18 @@ class DefaultCoreDataStack: CoreDataStack {
 
     // MARK: - Core Data Saving support
 
-    func saveContext () {
+    func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()
             } catch {
-                
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }
-    
+
     func clearDB() {
         let coordinator = persistentContainer.persistentStoreCoordinator
         for store in coordinator.persistentStores where store.url != nil {

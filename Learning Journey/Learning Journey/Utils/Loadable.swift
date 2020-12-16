@@ -3,7 +3,6 @@ import SwiftUI
 typealias LoadableSubject<Value> = Binding<Loadable<Value>>
 
 enum Loadable<T> {
-
     case notRequested
     case isLoading(last: T?, cancelBag: CancelBag)
     case loaded(T)
@@ -16,6 +15,7 @@ enum Loadable<T> {
         default: return nil
         }
     }
+
     var error: Error? {
         switch self {
         case let .failed(error): return error
@@ -25,11 +25,10 @@ enum Loadable<T> {
 }
 
 extension Loadable {
-    
     mutating func setIsLoading(cancelBag: CancelBag) {
         self = .isLoading(last: value, cancelBag: cancelBag)
     }
-    
+
     mutating func cancelLoading() {
         switch self {
         case let .isLoading(last, cancelBag):
@@ -40,13 +39,14 @@ extension Loadable {
                 let error = NSError(
                     domain: NSCocoaErrorDomain, code: NSUserCancelledError,
                     userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("Canceled by user",
-                                                                            comment: "")])
+                                                                            comment: "")]
+                )
                 self = .failed(error)
             }
         default: break
         }
     }
-    
+
     func map<V>(_ transform: (T) throws -> V) -> Loadable<V> {
         do {
             switch self {

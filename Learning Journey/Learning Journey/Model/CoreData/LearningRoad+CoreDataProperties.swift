@@ -6,21 +6,16 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
-
-extension LearningRoad {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<LearningRoad> {
+public extension LearningRoad {
+    @nonobjc class func fetchRequest() -> NSFetchRequest<LearningRoad> {
         return NSFetchRequest<LearningRoad>(entityName: "LearningRoad")
     }
 
-    @NSManaged public var name: String
-    @NSManaged public var learningJourney: LearningJourney
-
+    @NSManaged var name: String
+    @NSManaged var learningJourney: LearningJourney
 }
 
-extension LearningRoad : Identifiable {
-
-}
+extension LearningRoad: Identifiable {}

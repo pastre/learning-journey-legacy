@@ -1,12 +1,13 @@
-import SwiftUI
 import Combine
+import SwiftUI
 
 struct LeariningJourneyView: View {
-    
     // MARK: - Enviroment
+
     @Environment(\.injected) private var injected: DIContainer
-    
+
     // MARK: - Routing state
+
     @State private var routingState: Routing = .init()
     private var routeBinding: Binding<Routing> {
         $routingState.dispatched(
@@ -14,18 +15,21 @@ struct LeariningJourneyView: View {
             \.routing.learningRoadsListView
         )
     }
-    
+
     // MARK: - Dependencies
+
     @State private(set) var learningRoads: Loadable<LazyList<LearningRoad>>
-    
+
     // MARK: - Initialization
+
     init(
         learningRoads: Loadable<LazyList<LearningRoad>> = .notRequested
     ) {
-        self._learningRoads = .init(initialValue: learningRoads)
+        _learningRoads = .init(initialValue: learningRoads)
     }
-    
+
     // MARK: - UI Components
+
     var body: some View {
         NavigationView {
             AnyView(
@@ -34,7 +38,7 @@ struct LeariningJourneyView: View {
             .navigationBarTitle("🍎 👨‍💻 🏋️", displayMode: .large)
         }
     }
-    
+
     private var content: AnyView {
         switch learningRoads {
         case let .loaded(learningRoads): return AnyView(loadedView(learningRoads))
@@ -43,13 +47,12 @@ struct LeariningJourneyView: View {
         case .notRequested: return AnyView(notRequestedView)
         }
     }
-    
-    
+
     private var notRequestedView: some View {
         Text("not requested")
             .onAppear(perform: reloadLearningRoads)
     }
-    
+
     private func loadedView(_ learningRoads: LazyList<LearningRoad>) -> some View {
         ScrollView {
             LazyVGrid(
@@ -59,11 +62,11 @@ struct LeariningJourneyView: View {
                 pinnedViews: [],
                 content: {
                     ForEach(learningRoads, id: \.name) { road in
-                        NavigationLink (
+                        NavigationLink(
                             destination: self.roadView(road: road),
                             tag: road.name,
-                            selection: self.routeBinding.learningRoad)
-                        {
+                            selection: self.routeBinding.learningRoad
+                        ) {
                             roadCell(road)
                         }
                     }
@@ -72,11 +75,11 @@ struct LeariningJourneyView: View {
         }
         .padding()
     }
-    
+
     private func roadView(road: LearningRoad) -> some View {
         LearningRoadView(learningRoad: road)
     }
-    
+
     private func roadCell(_ road: LearningRoad) -> some View {
         VStack {
             ZStack {
@@ -93,12 +96,13 @@ struct LeariningJourneyView: View {
                 .foregroundColor(Color.black)
         }
     }
-    
+
     // MARK: - Helpers
+
     func reloadLearningRoads() {
         injected.interactors.learningRoadInteractor.load($learningRoads)
     }
-    
+
     // FIXME: - This should come in the json, but im to lazy to properly format it now
     private func getIcon(for roadName: String) -> Image {
         switch roadName {
@@ -112,8 +116,6 @@ struct LeariningJourneyView: View {
         }
         return Image(systemName: "faceids")
     }
-    
-    
 }
 
 extension LearningRoad {
@@ -121,8 +123,7 @@ extension LearningRoad {
 }
 
 extension LeariningJourneyView {
-    struct Routing: Equatable{
+    struct Routing: Equatable {
         var learningRoad: LearningRoad.Code?
     }
 }
-

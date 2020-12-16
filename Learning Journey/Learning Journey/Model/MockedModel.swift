@@ -1,11 +1,11 @@
 #if DEBUG
 
-extension LearningObjective {
-    // TODO
-}
+    extension LearningObjective {
+        // TODO:
+    }
 
-extension LearningRoad {
-    // TODO
-}
+    extension LearningRoad {
+        // TODO:
+    }
 
 #endif

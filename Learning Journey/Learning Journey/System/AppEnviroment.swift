@@ -3,27 +3,28 @@ import Foundation
 struct AppEnvironment {
     let container: DIContainer
 }
+
 extension AppEnvironment {
     static func bootstrap() -> AppEnvironment {
         let appState = Store<AppState>(AppState())
         let coreDataStack = DefaultCoreDataStack()
-        
+
         let coreDataFacade = DefaultCoreDataFacade(
             coreDataStack: coreDataStack
         )
         configureDefaultDataIfNeeded(coreDataFacade)
-        
+
         let localRepository = CoreDataLearningRoadsLocalRepository(
             databaseFacade: coreDataFacade
         )
-        
+
         let interactors: DIContainer.Interactors = .init(
             learningRoadInteractor: DefaultLearningRoadInteractor(
                 appStore: appState,
                 localRepository: localRepository
             )
         )
-        
+
         return .init(
             container: .init(
                 appStore: appState,
@@ -31,7 +32,7 @@ extension AppEnvironment {
             )
         )
     }
-    
+
     // This is ugly
     struct FlatLearningObjective: Codable {
         let cluster: String
@@ -50,35 +51,34 @@ extension AppEnvironment {
         let goal: String?
         let roadName: String
     }
-    
+
     private static func configureDefaultDataIfNeeded(_ facade: CoreDataFacade) {
-        
-        guard //facade.fetchLearningJourneys() == nil,
-              let url = Bundle.main.url(
+        guard // facade.fetchLearningJourneys() == nil,
+            let url = Bundle.main.url(
                 forResource: "FlatLearningJourney",
                 withExtension: ".json"
-              ),
-              let data = try? Data(
+            ),
+            let data = try? Data(
                 contentsOf: url,
                 options: .mappedIfSafe
-              ),
-              let fromJson = try? JSONDecoder().decode(
+            ),
+            let fromJson = try? JSONDecoder().decode(
                 [FlatLearningObjective].self,
                 from: data
-              )
-        else {  return }
-        
+            )
+        else { return }
+
         facade.addLearningJourney(journey: "oi")
         guard let journey = facade.fetchLearningJourneys()?.first
         else { return }
-        
+
         Set(fromJson.map { $0.roadName }).forEach {
             facade.addLearningRoad(
                 name: $0,
                 journey: journey
             )
         }
-        
+
         fromJson.forEach { objective in
             guard let road = facade.fetchLearningRoads(for: journey)?.filter { $0.name == objective.roadName }.first
             else { return }
@@ -99,7 +99,7 @@ extension AppEnvironment {
                 learningRoad: road
             )
         }
-        
+
 //        var objectives: [LearningObjective] = []
 //        roads.forEach { road in
 //            let flatObjectives = fromJson.filter { road.name == $0.roadName }
