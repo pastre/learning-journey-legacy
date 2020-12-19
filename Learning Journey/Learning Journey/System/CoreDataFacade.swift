@@ -101,14 +101,14 @@ struct DefaultCoreDataFacade: CoreDataFacade {
     }
 
     func fetchLearningObjectives(for road: LearningRoad) -> [LearningObjective]? {
-        // TODO: query with filter
+        // @TODO: query with filter
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LearningObjective")
         let allObjectives = try? context.fetch(fetchRequest) as? [LearningObjective]
         return allObjectives?.filter { $0.learningRoad == road }
     }
 
     func fetchLearningRoads(for journey: LearningJourney) -> [LearningRoad]? {
-        // TODO: query with filter
+        // @TODO: query with filter
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "LearningRoad")
         let allRoads = try? context.fetch(fetchRequest) as? [LearningRoad]
         return allRoads?.filter { $0.learningJourney == journey }

@@ -39,7 +39,7 @@ struct DefaultLearningRoadInteractor: LearningRoadInteractor {
 
 struct LearningRoadInteractorStub: LearningRoadInteractor {
     func load(objectives _: LoadableSubject<LazyList<LearningObjective>>, road _: LearningRoad) {
-        // TODO:
+        // @TODO
     }
 
     func load(_: LoadableSubject<LazyList<LearningRoad>>) {

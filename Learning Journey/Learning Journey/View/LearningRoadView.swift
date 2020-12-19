@@ -16,6 +16,11 @@ struct LearningRoadView: View {
         )
     }
 
+    // MARK: - Details presentation
+    // @TODO Reconsider if routing is necessary
+    @State private var isPresentingObjective: Bool = false
+    @State private var selectedObjective: LearningObjective?
+    
     // MARK: - Dependencies
 
     @State private var objectives: Loadable<LazyList<LearningObjective>>
@@ -28,7 +33,7 @@ struct LearningRoadView: View {
             content
         )
         .navigationTitle(learningRoad.name)
-        .background(Color.ljGray)
+        .background(Color.LearningJourney.gray)
     }
 
     private var content: AnyView {
@@ -55,21 +60,28 @@ struct LearningRoadView: View {
     }
 
     private func loadedView(_ objectives: LazyList<LearningObjective>) -> some View {
-        GeometryReader { geometry in
-            ScrollView {
-                LazyVGrid(
-                    columns: [GridItem].init(repeating: .init(.flexible()), count: 1),
-                    alignment: .center,
-                    content: {
-                        ForEach(objectives, id: \.code) { objective in
-                            objectiveCell(objective, geometry.size)
+        ZStack {
+            GeometryReader { geometry in
+                ScrollView {
+                    LazyVGrid(
+                        columns: [GridItem].init(repeating: .init(.flexible()), count: 1),
+                        alignment: .center,
+                        content: {
+                            ForEach(objectives, id: \.code) { objective in
+                                objectiveCell(objective, geometry.size)
+                            }
                         }
-                    }
-                )
+                    )
+                }
+            }
+            if isPresentingObjective {
+                blackOverlayView
+                objectiveView
             }
         }
     }
 
+    // MARK: - UI Components
     private func objectiveCell(_ objective: LearningObjective, _ size: CGSize) -> some View {
         Group {
             VStack {
@@ -81,7 +93,7 @@ struct LearningRoadView: View {
                                 size: 14,
                                 weight: .heavy
                             ))
-                            .foregroundColor(Color.darkGray)
+                            .foregroundColor(Color.LearningJourney.darkGray)
                         Spacer()
                         self.coreElectiveTag(objective: objective)
                     }
@@ -98,10 +110,10 @@ struct LearningRoadView: View {
                         VStack(alignment: .leading) {
                             Text("Current level")
                                 .bold()
-                                .foregroundColor(Color.darkGray)
+                                .foregroundColor(Color.LearningJourney.darkGray)
                                 .font(.system(size: 12))
                             Button("Set your level") {
-                                print("SETTING")
+                                presentObjectiveView(objective)
                             }
                         }
 
@@ -110,7 +122,7 @@ struct LearningRoadView: View {
                         VStack(alignment: .trailing) {
                             Text("Goal")
                                 .bold()
-                                .foregroundColor(Color.darkGray)
+                                .foregroundColor(Color.LearningJourney.darkGray)
                                 .font(.system(size: 12))
                             Button {
                                 print("Hi!")
@@ -130,15 +142,44 @@ struct LearningRoadView: View {
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
     }
-
+    
+    private func presentObjectiveView(_ objective: LearningObjective) {
+        withAnimation {
+            self.isPresentingObjective = true
+            self.selectedObjective = objective
+        }
+    }
+    
+    private var blackOverlayView: some View {
+        Color
+            .black
+            .opacity(0.3)
+            .ignoresSafeArea()
+            .transition(.opacity)
+    }
+    
+    private var objectiveView: AnyView {
+        guard let objective = selectedObjective
+        else { fatalError("No object to present! This should never happen") }
+        
+        return AnyView(
+            LearningObjectiveView(objective: objective)
+                .transition(.scale)
+        )
+    }
+    
+    // MARK: - UI Helpers
     private func coreElectiveTag(objective: LearningObjective) -> some View {
         objective.isCore ? TextPill.core : TextPill.elective
     }
-
+    
     // MARK: - Helpers
 
     private func loadRoadObjectives() {
-        injected.interactors.learningRoadInteractor.load(objectives: $objectives, road: learningRoad)
+        injected.interactors.learningRoadInteractor.load(
+            objectives: $objectives,
+            road: learningRoad
+        )
     }
 }
 

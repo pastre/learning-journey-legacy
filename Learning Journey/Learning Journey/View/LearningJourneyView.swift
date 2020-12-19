@@ -84,7 +84,7 @@ struct LeariningJourneyView: View {
         VStack {
             ZStack {
                 Circle()
-                    .fill(Color.ljGray)
+                    .fill(Color.LearningJourney.gray)
                     .frame(width: 128, height: 128)
                 Circle()
                     .fill(Color.white)

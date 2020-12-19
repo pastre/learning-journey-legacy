@@ -22,6 +22,16 @@ struct TextPill: View {
 }
 
 extension TextPill {
+    init(title: String, colorScheme: PillColorScheme) {
+        self.init(
+            title: title,
+            backgroundColor: colorScheme.backgroundColor,
+            titleColor: colorScheme.color
+        )
+    }
+}
+
+extension TextPill {
     static let core = TextPill(
         title: "Core",
         backgroundColor: .init(red: 0xD1 / 0xFF, green: 0xF7 / 0xFF, blue: 0xC4 / 0xFF),
