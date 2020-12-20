@@ -31,7 +31,7 @@ struct LearningObjectiveView: View {
                     levelName: "Novice",
                     levelDescription: objective.noviceDescription,
                     goalColorScheme: .novice,
-                    isGoal: truegi
+                    isGoal: true
                 )
                     .padding(.bottom, 16)
                 buildLevel(
