@@ -22,6 +22,7 @@ struct LearningObjective {
         let code: String
         let name: String
         let isCore: Bool
+        let isBasic: Bool
     }
     
     struct Level {
@@ -61,8 +62,8 @@ extension LearningJourney {
 extension LearningRoad {
     static func dummy(_ journey: LearningJourney) -> LearningRoad {
         var road: LearningRoad = .init(
-            name: "Dummy road",
-            imageName: "add",
+            name: "Coding",
+            imageName: "swiftIcon",
             learningJourney: journey,
             objectives: []
         )
@@ -76,9 +77,10 @@ extension LearningObjective {
          .init(
             learningRoad: road,
             details: .init(
-                code: "CD -1",
-                name: "Dummy objective",
-                isCore: true
+                code: "CD 00",
+                name: "Design an App that targets multiple languages and culture providing a localized user experience.",
+                isCore: false,
+                isBasic: true
             ),
             levels: [
                 .init(

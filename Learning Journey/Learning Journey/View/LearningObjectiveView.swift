@@ -10,13 +10,20 @@ struct LearningObjectiveView: View {
 
     let objective: LearningObjective
 
-    // MARK: - View UI
+    // MARK: - Initialization
+
+    init(objective: LearningObjective) {
+        self.objective = objective
+    }
+    
+    
+    // MARK: - UI Components
 
     var body: some View {
         AnyView(
             content
                 .background(Color.white)
-                .cornerRadius(10)
+                .cornerRadius(24)
                 .padding(24)
         )
         .navigationBarHidden(true)
@@ -24,42 +31,18 @@ struct LearningObjectiveView: View {
 
     private var content: some View {
         VStack {
-            headerRow
+            closeRow
                 .padding(.bottom, 32)
+            headerRow
+                .padding(.bottom, 16)
             Group {
                 ForEach(objective.levels, id: \.name) {
                     buildLevel(
                         levelName: $0.name,
                         levelDescription: $0.description,
-                        goalColorScheme: .done)
+                        goalColorScheme: .done
+                    ).padding(.top, 16)
                 }
-//                buildLevel(
-//                    levelName: "Novice",
-//                    levelDescription: objective.,
-//                    goalColorScheme: .novice,
-//                    isGoal: true
-//                )
-//                    .padding(.bottom, 16)
-//                buildLevel(
-//                    levelName: "Intermediate",
-//                    levelDescription: objective.intermediateDescription,
-//                    goalColorScheme: .intermediate,
-//                    isGoal: true
-//                )
-//                    .padding(.bottom, 16)
-//                buildLevel(
-//                    levelName: "Proficient",
-//                    levelDescription: objective.proficientDescription,
-//                    goalColorScheme: .proficient,
-//                    isGoal: true
-//                )
-//                    .padding(.bottom, 16)
-//                buildLevel(
-//                    levelName: "Expert",
-//                    levelDescription: objective.expertDescription,
-//                    goalColorScheme: .expert,
-//                    isGoal: true
-//                )
             }
         }
         .padding(.init(
@@ -70,13 +53,26 @@ struct LearningObjectiveView: View {
         ))
     }
 
-    // MARK: - Initialization
-
-    init(objective: LearningObjective) {
-        self.objective = objective
-    }
     
-    // MARK: - UI Components
+    private var closeRow: some View {
+        HStack(alignment: .center) {
+            Text(objective.learningRoad.name)
+                .font(.system(
+                        size: 14,
+                        weight: .bold
+                ))
+            Spacer()
+            Button {
+                navigateBack()
+            } label: {
+                Image.closeIcon
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 24, height: 24, alignment: .center)
+            }
+
+        }
+    }
     
     private var headerRow: some View {
         VStack(alignment: .leading) {
@@ -86,7 +82,14 @@ struct LearningObjectiveView: View {
                     .bold()
                     .font(.system(size: 10, weight: .bold))
                 Spacer()
-                TextPill.basicKnowledge
+                if objective.details.isCore {
+                    coreTag
+                } else {
+                    electiveTag
+                }
+                if objective.details.isBasic {
+                    basicTag
+                }
             }
             HStack {
                 Text(objective.details.name)
@@ -97,6 +100,26 @@ struct LearningObjectiveView: View {
         }
     }
     
+    private var coreTag: some View {
+            Text("Core")
+                .foregroundColor(Color.LearningJourney.Green.dark)
+                .font(.system(size: 10, weight: .bold))
+    }
+    
+    
+    private var electiveTag: some View {
+            Text("Elective")
+                .foregroundColor(Color.LearningJourney.Orange.dark)
+                .font(.system(size: 10, weight: .bold))
+    }
+    
+    private var basicTag: some View {
+            Text("Basic knowledge")
+                .foregroundColor(Color.LearningJourney.Purple.dark)
+                .font(.system(size: 10, weight: .bold))
+    }
+    
+    // MARK: -  UI Helpers
     private func buildLevel(
         levelName: String,
         levelDescription: String,
@@ -129,6 +152,7 @@ struct LearningObjectiveView: View {
         }
     }
     
+    // MARK: - Gestures
     private func onGoalTap() {
         print("Goal")
     }
@@ -137,7 +161,7 @@ struct LearningObjectiveView: View {
         print("Done")
     }
 
-    // MARK: - Helpers
-    
-    private func loadDetails() {}
+    private func navigateBack() {
+        
+    }
 }
