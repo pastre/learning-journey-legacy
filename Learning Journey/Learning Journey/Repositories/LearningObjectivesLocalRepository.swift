@@ -6,6 +6,22 @@ protocol LearningRoadsLocalRepository {
     func learningObjectives(for road: LearningRoad) -> AnyPublisher<LazyList<LearningObjective>, Error>
 }
 
+final class DefaultLearningRoadsLocalRepository: LearningRoadsLocalRepository {
+    
+    func learningRoads() -> AnyPublisher<LazyList<LearningRoad>, Error> {
+        let list = LearningJourney.dummy.roads.lazyList
+        return CurrentValueSubject(list)
+            .eraseToAnyPublisher()
+    }
+    
+    func learningObjectives(for road: LearningRoad) -> AnyPublisher<LazyList<LearningObjective>, Error> {
+        return CurrentValueSubject(road.objectives.lazyList)
+            .eraseToAnyPublisher()
+    }
+    
+    
+}
+
 struct CoreDataLearningRoadsLocalRepository: LearningRoadsLocalRepository {
     private let databaseFacade: CoreDataFacade
 

@@ -27,33 +27,39 @@ struct LearningObjectiveView: View {
             headerRow
                 .padding(.bottom, 32)
             Group {
-                buildLevel(
-                    levelName: "Novice",
-                    levelDescription: objective.noviceDescription,
-                    goalColorScheme: .novice,
-                    isGoal: true
-                )
-                    .padding(.bottom, 16)
-                buildLevel(
-                    levelName: "Intermediate",
-                    levelDescription: objective.intermediateDescription,
-                    goalColorScheme: .intermediate,
-                    isGoal: true
-                )
-                    .padding(.bottom, 16)
-                buildLevel(
-                    levelName: "Proficient",
-                    levelDescription: objective.proficientDescription,
-                    goalColorScheme: .proficient,
-                    isGoal: true
-                )
-                    .padding(.bottom, 16)
-                buildLevel(
-                    levelName: "Expert",
-                    levelDescription: objective.expertDescription,
-                    goalColorScheme: .expert,
-                    isGoal: true
-                )
+                ForEach(objective.levels, id: \.name) {
+                    buildLevel(
+                        levelName: $0.name,
+                        levelDescription: $0.description,
+                        goalColorScheme: .done)
+                }
+//                buildLevel(
+//                    levelName: "Novice",
+//                    levelDescription: objective.,
+//                    goalColorScheme: .novice,
+//                    isGoal: true
+//                )
+//                    .padding(.bottom, 16)
+//                buildLevel(
+//                    levelName: "Intermediate",
+//                    levelDescription: objective.intermediateDescription,
+//                    goalColorScheme: .intermediate,
+//                    isGoal: true
+//                )
+//                    .padding(.bottom, 16)
+//                buildLevel(
+//                    levelName: "Proficient",
+//                    levelDescription: objective.proficientDescription,
+//                    goalColorScheme: .proficient,
+//                    isGoal: true
+//                )
+//                    .padding(.bottom, 16)
+//                buildLevel(
+//                    levelName: "Expert",
+//                    levelDescription: objective.expertDescription,
+//                    goalColorScheme: .expert,
+//                    isGoal: true
+//                )
             }
         }
         .padding(.init(
@@ -75,7 +81,7 @@ struct LearningObjectiveView: View {
     private var headerRow: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(objective.code)
+                Text(objective.details.code)
                     .foregroundColor(.gray)
                     .bold()
                     .font(.system(size: 10, weight: .bold))
@@ -83,7 +89,7 @@ struct LearningObjectiveView: View {
                 TextPill.basicKnowledge
             }
             HStack {
-                Text(objective.learningObjective)
+                Text(objective.details.name)
                     .bold()
                     .font(.system(size: 20))
                 Spacer()

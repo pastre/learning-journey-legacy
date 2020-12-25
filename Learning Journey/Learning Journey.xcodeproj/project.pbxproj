@@ -33,16 +33,7 @@
 		D73A7593257B214700C9E1FC /* AppEnviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A7592257B214700C9E1FC /* AppEnviroment.swift */; };
 		D73A759C257B221D00C9E1FC /* LearningRoadInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A759B257B221D00C9E1FC /* LearningRoadInteractor.swift */; };
 		D73A75A5257B28F300C9E1FC /* LearningJourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A75A4257B28F300C9E1FC /* LearningJourneyView.swift */; };
-		D7A7CFDD257F6D4B00D8821E /* Learning Journey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7A7CFDB257F6D4B00D8821E /* Learning Journey.xcdatamodeld */; };
 		D7A7D00F257F794900D8821E /* FlatLearningJourney.json in Resources */ = {isa = PBXBuildFile; fileRef = D7A7D00E257F794900D8821E /* FlatLearningJourney.json */; };
-		D7C0051F257F83F900434A34 /* LearningObjective+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C00517257F83F900434A34 /* LearningObjective+CoreDataClass.swift */; };
-		D7C00520257F83F900434A34 /* LearningObjective+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C00518257F83F900434A34 /* LearningObjective+CoreDataProperties.swift */; };
-		D7C00521257F83F900434A34 /* LearningRoad+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C00519257F83F900434A34 /* LearningRoad+CoreDataClass.swift */; };
-		D7C00522257F83F900434A34 /* LearningRoad+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C0051A257F83F900434A34 /* LearningRoad+CoreDataProperties.swift */; };
-		D7C00523257F83F900434A34 /* LearningProgress+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C0051B257F83F900434A34 /* LearningProgress+CoreDataClass.swift */; };
-		D7C00524257F83F900434A34 /* LearningProgress+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C0051C257F83F900434A34 /* LearningProgress+CoreDataProperties.swift */; };
-		D7C00525257F83F900434A34 /* LearningJourney+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C0051D257F83F900434A34 /* LearningJourney+CoreDataClass.swift */; };
-		D7C00526257F83F900434A34 /* LearningJourney+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C0051E257F83F900434A34 /* LearningJourney+CoreDataProperties.swift */; };
 		D7C0052E257F86DC00434A34 /* CoreDataFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C0052D257F86DC00434A34 /* CoreDataFacade.swift */; };
 		D7C005C1257F9FB000434A34 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C005C0257F9FB000434A34 /* CoreDataStack.swift */; };
 		D7C005E2258973ED00434A34 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C005E1258973ED00434A34 /* CancelBag.swift */; };
@@ -98,16 +89,7 @@
 		D73A7592257B214700C9E1FC /* AppEnviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnviroment.swift; sourceTree = "<group>"; };
 		D73A759B257B221D00C9E1FC /* LearningRoadInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningRoadInteractor.swift; sourceTree = "<group>"; };
 		D73A75A4257B28F300C9E1FC /* LearningJourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningJourneyView.swift; sourceTree = "<group>"; };
-		D7A7CFDC257F6D4B00D8821E /* Learning Journey.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Learning Journey.xcdatamodel"; sourceTree = "<group>"; };
 		D7A7D00E257F794900D8821E /* FlatLearningJourney.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FlatLearningJourney.json; sourceTree = "<group>"; };
-		D7C00517257F83F900434A34 /* LearningObjective+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningObjective+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D7C00518257F83F900434A34 /* LearningObjective+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningObjective+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		D7C00519257F83F900434A34 /* LearningRoad+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningRoad+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D7C0051A257F83F900434A34 /* LearningRoad+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningRoad+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		D7C0051B257F83F900434A34 /* LearningProgress+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningProgress+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D7C0051C257F83F900434A34 /* LearningProgress+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningProgress+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		D7C0051D257F83F900434A34 /* LearningJourney+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningJourney+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D7C0051E257F83F900434A34 /* LearningJourney+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningJourney+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D7C0052D257F86DC00434A34 /* CoreDataFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFacade.swift; sourceTree = "<group>"; };
 		D7C005C0257F9FB000434A34 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D7C005E1258973ED00434A34 /* CancelBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
@@ -241,7 +223,6 @@
 		D73A7571257B1AE200C9E1FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D7A7CFE1257F6F6D00D8821E /* CoreData */,
 				D73A756C257B19A600C9E1FC /* Models.swift */,
 				D73A7572257B1AF600C9E1FC /* MockedModel.swift */,
 			);
@@ -288,25 +269,9 @@
 			isa = PBXGroup;
 			children = (
 				D7125CB2257D378000DC7FA2 /* DefaultLearningJourneys.json */,
-				D7A7CFDB257F6D4B00D8821E /* Learning Journey.xcdatamodeld */,
 				D7A7D00E257F794900D8821E /* FlatLearningJourney.json */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		D7A7CFE1257F6F6D00D8821E /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				D7C00517257F83F900434A34 /* LearningObjective+CoreDataClass.swift */,
-				D7C00518257F83F900434A34 /* LearningObjective+CoreDataProperties.swift */,
-				D7C00519257F83F900434A34 /* LearningRoad+CoreDataClass.swift */,
-				D7C0051A257F83F900434A34 /* LearningRoad+CoreDataProperties.swift */,
-				D7C0051B257F83F900434A34 /* LearningProgress+CoreDataClass.swift */,
-				D7C0051C257F83F900434A34 /* LearningProgress+CoreDataProperties.swift */,
-				D7C0051D257F83F900434A34 /* LearningJourney+CoreDataClass.swift */,
-				D7C0051E257F83F900434A34 /* LearningJourney+CoreDataProperties.swift */,
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		D7C005BF257F9F9E00434A34 /* Persistence */ = {
@@ -448,32 +413,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7C00526257F83F900434A34 /* LearningJourney+CoreDataProperties.swift in Sources */,
 				D73A759C257B221D00C9E1FC /* LearningRoadInteractor.swift in Sources */,
 				D7125CD1257DA7C500DC7FA2 /* Color+Extension.swift in Sources */,
 				D7125C8E257C4D4B00DC7FA2 /* Helpers.swift in Sources */,
 				D7125CA0257C6DC100DC7FA2 /* LearningObjectiveView.swift in Sources */,
 				D7125CC9257DA0C900DC7FA2 /* TextPill.swift in Sources */,
 				D7C005C1257F9FB000434A34 /* CoreDataStack.swift in Sources */,
-				D7C00520257F83F900434A34 /* LearningObjective+CoreDataProperties.swift in Sources */,
 				D7C005E2258973ED00434A34 /* CancelBag.swift in Sources */,
-				D7C0051F257F83F900434A34 /* LearningObjective+CoreDataClass.swift in Sources */,
 				D7125CBB257D719E00DC7FA2 /* ImageManager.swift in Sources */,
 				D7125C9B257C66F800DC7FA2 /* LearningRoadView.swift in Sources */,
 				D73A7573257B1AF600C9E1FC /* MockedModel.swift in Sources */,
 				D7125CC3257D786E00DC7FA2 /* ColorManager.swift in Sources */,
 				D73A7584257B1D1900C9E1FC /* AppState.swift in Sources */,
 				D7125C89257C4CB200DC7FA2 /* Loadable.swift in Sources */,
-				D7C00525257F83F900434A34 /* LearningJourney+CoreDataClass.swift in Sources */,
-				D7C00521257F83F900434A34 /* LearningRoad+CoreDataClass.swift in Sources */,
-				D7A7CFDD257F6D4B00D8821E /* Learning Journey.xcdatamodeld in Sources */,
 				D73A756D257B19A600C9E1FC /* Models.swift in Sources */,
 				D73A7541257B181200C9E1FC /* ContentView.swift in Sources */,
 				D7C0052E257F86DC00434A34 /* CoreDataFacade.swift in Sources */,
 				D73A7589257B1E2B00C9E1FC /* DependencyInjector.swift in Sources */,
-				D7C00522257F83F900434A34 /* LearningRoad+CoreDataProperties.swift in Sources */,
-				D7C00524257F83F900434A34 /* LearningProgress+CoreDataProperties.swift in Sources */,
-				D7C00523257F83F900434A34 /* LearningProgress+CoreDataClass.swift in Sources */,
 				D73A7593257B214700C9E1FC /* AppEnviroment.swift in Sources */,
 				D72F4E5B257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift in Sources */,
 				D73A75A5257B28F300C9E1FC /* LearningJourneyView.swift in Sources */,
@@ -800,19 +756,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		D7A7CFDB257F6D4B00D8821E /* Learning Journey.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D7A7CFDC257F6D4B00D8821E /* Learning Journey.xcdatamodel */,
-			);
-			currentVersion = D7A7CFDC257F6D4B00D8821E /* Learning Journey.xcdatamodel */;
-			path = "Learning Journey.xcdatamodeld";
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D73A7533257B181200C9E1FC /* Project object */;
 }

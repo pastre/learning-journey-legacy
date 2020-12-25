@@ -7,16 +7,9 @@ struct AppEnvironment {
 extension AppEnvironment {
     static func bootstrap() -> AppEnvironment {
         let appState = Store<AppState>(AppState())
-        let coreDataStack = DefaultCoreDataStack()
 
-        let coreDataFacade = DefaultCoreDataFacade(
-            coreDataStack: coreDataStack
-        )
-        configureDefaultDataIfNeeded(coreDataFacade)
-
-        let localRepository = CoreDataLearningRoadsLocalRepository(
-            databaseFacade: coreDataFacade
-        )
+        let localRepository =
+         DefaultLearningRoadsLocalRepository()
 
         let interactors: DIContainer.Interactors = .init(
             learningRoadInteractor: DefaultLearningRoadInteractor(
@@ -53,6 +46,7 @@ extension AppEnvironment {
     }
 
     private static func configureDefaultDataIfNeeded(_ facade: CoreDataFacade) {
+        return
         let areDefaultLearningJourneysConfigured = facade.fetchLearningJourneys()?.isEmpty ?? true
         guard areDefaultLearningJourneysConfigured,
             let url = Bundle.main.url(

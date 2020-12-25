@@ -67,7 +67,7 @@ struct LearningRoadView: View {
                         columns: [GridItem].init(repeating: .init(.flexible()), count: 1),
                         alignment: .center,
                         content: {
-                            ForEach(objectives, id: \.code) { objective in
+                            ForEach(objectives, id: \.details.code) { objective in
                                 objectiveCell(objective, geometry.size)
                             }
                         }
@@ -87,7 +87,7 @@ struct LearningRoadView: View {
             VStack {
                 Group {
                     HStack {
-                        Text(objective.code)
+                        Text(objective.details.code)
                             .bold()
                             .font(.system(
                                 size: 14,
@@ -100,7 +100,7 @@ struct LearningRoadView: View {
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 2, trailing: 0))
                     .frame(maxWidth: .infinity)
 
-                    Text(objective.learningObjective)
+                    Text(objective.details.name)
                         .bold()
                         .foregroundColor(Color.black)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -170,7 +170,7 @@ struct LearningRoadView: View {
     
     // MARK: - UI Helpers
     private func coreElectiveTag(objective: LearningObjective) -> some View {
-        objective.isCore ? TextPill.core : TextPill.elective
+        objective.details.isCore ? TextPill.core : TextPill.elective
     }
     
     // MARK: - Helpers
@@ -203,11 +203,7 @@ extension LearningRoadView {
 
     struct LearningRoadView_Previews: PreviewProvider {
         static var previews: some View {
-            LearningRoadView(
-                learningRoad: .init(),
-                objectives: .loaded([].lazyList
-                )
-            )
+            LearningRoadView(learningRoad: .dummy(.dummy))
         }
     }
 #endif
