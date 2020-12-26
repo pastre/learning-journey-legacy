@@ -13,7 +13,7 @@ struct DefaultLearningObjectiveInteractor: LearningObjectiveInteractor {
     // TODO Review this when changing local repository
     func onGoalTapped(_ objective: LearningObjective, level: LearningObjective.Level) {
         var updatedObjective = objective
-        updatedObjective.currentGoal = level
+        updatedObjective.currentGoal = level == objective.currentGoal ? nil : level
         localRepository.updateObjective(updatedObjective)
         appStore[\.userData.learningObjectiveDidChange] = updatedObjective
     }
@@ -21,20 +21,14 @@ struct DefaultLearningObjectiveInteractor: LearningObjectiveInteractor {
     // TODO Review this when changing local repository
     func onDoneTapped(_ objective: LearningObjective, level: LearningObjective.Level) {
         var updatedObjective = objective
-        updatedObjective.currentLevel = level
+        updatedObjective.currentLevel = level == objective.currentLevel ? nil : level
         localRepository.updateObjective(updatedObjective)
         appStore[\.userData.learningObjectiveDidChange] = updatedObjective
     }
 }
 
 struct LearningObjectiveInteractorStub: LearningObjectiveInteractor {
-    func onGoalTapped(_ objective: LearningObjective, level: LearningObjective.Level) {
-        
-    }
+    func onGoalTapped(_ objective: LearningObjective, level: LearningObjective.Level) {}
     
-    func onDoneTapped(_ objective: LearningObjective, level: LearningObjective.Level) {
-        
-    }
-    
-    
+    func onDoneTapped(_ objective: LearningObjective, level: LearningObjective.Level) {}
 }
