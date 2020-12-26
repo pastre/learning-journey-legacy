@@ -6,16 +6,14 @@ struct LearningObjectiveView: View {
 
     @Environment(\.injected) private var injected: DIContainer
 
+    // MARK: - Routing
+    @Binding var isDisplayed: Bool
+    
+    @State private var isDirty: Bool = false
+    
     // MARK: - Dependencies
 
-    let objective: LearningObjective
-
-    // MARK: - Initialization
-
-    init(objective: LearningObjective) {
-        self.objective = objective
-    }
-    
+    @State var objective: LearningObjective
     
     // MARK: - UI Components
 
@@ -24,23 +22,28 @@ struct LearningObjectiveView: View {
             content
                 .background(Color.white)
                 .cornerRadius(24)
-                .padding(24)
+                .padding([.horizontal, .bottom], 24)
         )
         .navigationBarHidden(true)
+        .onReceive(dataUpdate) {
+            guard let newObjective = $0.learningObjectiveDidChange
+            else { return }
+            objective = newObjective
+            isDirty.toggle()
+        }
     }
 
     private var content: some View {
         VStack {
-            closeRow
-                .padding(.bottom, 32)
+//            closeRow
+//                .padding(.bottom, 32)
             headerRow
                 .padding(.bottom, 16)
             Group {
                 ForEach(objective.levels, id: \.name) {
                     buildLevel(
-                        levelName: $0.name,
-                        levelDescription: $0.description,
-                        goalColorScheme: .done
+                        level: $0,
+                        isGoal: $0 == objective.currentGoal
                     ).padding(.top, 16)
                 }
             }
@@ -82,11 +85,10 @@ struct LearningObjectiveView: View {
                     .bold()
                     .font(.system(size: 10, weight: .bold))
                 Spacer()
-                if objective.details.isCore {
-                    coreTag
-                } else {
-                    electiveTag
-                }
+                
+                if objective.details.isCore { coreTag }
+                else { electiveTag }
+                
                 if objective.details.isBasic {
                     basicTag
                 }
@@ -121,47 +123,82 @@ struct LearningObjectiveView: View {
     
     // MARK: -  UI Helpers
     private func buildLevel(
-        levelName: String,
-        levelDescription: String,
-        goalColorScheme: PillColorScheme,
+        level: LearningObjective.Level,
         isGoal: Bool = false,
         isDone: Bool = false
     ) -> some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(levelName)
+                Text(level.name)
                     .font(.system(size: 10, weight: .bold))
                     .foregroundColor(
-                        isGoal ? goalColorScheme.color
+                        isGoal ? level.colorScheme.color
                             : isDone ? Color.LearningJourney.green
                             : Color.LearningJourney.darkGray
                     )
                 Spacer()
                 TextPill(
                     title: "Goal",
-                    colorScheme: isGoal ? goalColorScheme : .disabled
-                )
+                    colorScheme: isGoal ? level.colorScheme : .disabled
+                ).onTapGesture {
+                    onGoalTap(level)
+                }
                 TextPill(
                     title: "Done",
                     colorScheme: isDone ? .done : .disabled
-                )
+                ).onTapGesture {
+                    onDoneTap(level)
+                }
                 
             }
-            Text(levelDescription)
+            Text(level.description)
                 .foregroundColor(.black)
         }
     }
     
     // MARK: - Gestures
-    private func onGoalTap() {
+    private func onGoalTap(_ level: LearningObjective.Level) {
         print("Goal")
+        injected
+            .interactors
+            .learningObjectiveInteractor
+            .onGoalTapped(objective, level: level)
     }
     
-    private func onDoneTap() {
+    private func onDoneTap(_ level: LearningObjective.Level) {
         print("Done")
+        injected
+            .interactors
+            .learningObjectiveInteractor
+            .onDoneTapped(objective, level: level)
     }
 
     private func navigateBack() {
-        
+        isDisplayed = false
+    }
+}
+extension LearningObjectiveView {
+    struct Routing: Equatable {
+        var objectiveSheet: Bool = false
+    }
+    
+    struct DataUpdating: Equatable {
+        var newData: String
+    }
+}
+
+private extension LearningObjectiveView {
+    var routingUpdate: AnyPublisher<Routing, Never> {
+        injected
+            .appStore
+            .updates(
+                for: \.routing.learningObjectiveView
+            )
+    }
+    
+    var dataUpdate: AnyPublisher<AppState.UserData, Never> {
+        injected.appStore.updates(
+            for: \.userData
+        )
     }
 }

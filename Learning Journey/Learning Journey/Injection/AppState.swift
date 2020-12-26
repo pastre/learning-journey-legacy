@@ -6,13 +6,20 @@ struct AppState {
 }
 
 extension AppState {
-    struct UserData: Equatable { /* TODO: */ }
+    struct UserData: Equatable {
+        var learningObjectiveDidChange: LearningObjective?
+        
+        init(learningObjectiveDidChange: LearningObjective? = nil) {
+            self.learningObjectiveDidChange = learningObjectiveDidChange
+        }
+    }
 }
 
 extension AppState {
     struct ViewRouting: Equatable {
         var learningRoadsListView = LeariningJourneyView.Routing()
         var learningRoadView = LearningRoadView.Routing()
+        var learningObjectiveView = LearningObjectiveView.Routing()
     }
 }
 
@@ -25,7 +32,7 @@ extension AppState {
 }
 
 #if DEBUG
-    extension AppState {
-        static let preview = AppState()
-    }
+extension AppState {
+    static let preview = AppState()
+}
 #endif

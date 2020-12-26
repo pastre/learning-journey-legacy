@@ -1,4 +1,3 @@
-
 struct LearningJourney {
     let name: String
     var roads: [LearningRoad]
@@ -15,8 +14,9 @@ struct LearningObjective {
     let learningRoad: LearningRoad
     let details: Details
     let levels: [Level]
-    let currentLevel: Level?
-    let basicLevel: Level?
+    var currentLevel: Level?
+    var currentGoal: Level?
+    var basicLevel: Level?
     
     struct Details {
         let code: String
@@ -28,35 +28,28 @@ struct LearningObjective {
     struct Level {
         let name: String
         let description: String
-        let isGoal: Bool
+        let colorScheme: PillColorScheme
     }
 }
 
-extension LearningRoad: Equatable {
-    static func == (lhs: LearningRoad, rhs: LearningRoad) -> Bool {
-        // TODO Make it conform to Identifiable
-        lhs.name == rhs.name
-    }
-}
 
-extension LearningJourney: Equatable {
-    static func == (lhs: LearningJourney, rhs: LearningJourney) -> Bool {
-        // TODO Make it conform to Identifiable
-        lhs.name == rhs.name
-    }
-}
+extension LearningJourney: Equatable {}
+extension LearningRoad: Equatable {}
+extension LearningObjective: Equatable {}
+extension LearningObjective.Level: Equatable {}
+extension LearningObjective.Details: Equatable {}
 
 #if DEBUG
 
 extension LearningJourney {
-    static var dummy: LearningJourney {
+    static var dummy: LearningJourney = {
         var journey: LearningJourney = .init(
             name: "Dummy Journey",
             roads: []
         )
         journey.roads.append(.dummy(journey))
         return journey
-    }
+    }()
 }
 
 extension LearningRoad {
@@ -86,22 +79,22 @@ extension LearningObjective {
                 .init(
                     name: "Novice",
                     description: "Understand the impact in terms of market opportunities of a localized App and the differences between App translation and localization.",
-                    isGoal: false
+                    colorScheme: .novice
                 ),
                 .init(
                     name: "Intermediate",
                     description: "Understand Xcode base internalization functionalities and classes (NSLocalizableString, Locale) useful to localize an App.",
-                    isGoal: false
+                    colorScheme: .intermediate
                 ),
                 .init(
                     name: "Proficient",
                     description: "Provide a localized user experience by taking advantage of the Locale class opportunities and the Localizable.strings file.",
-                    isGoal: false
+                    colorScheme: .proficient
                 ),
                 .init(
                     name: "Expert",
                     description: "Understand .xliff file formats and determine best practices for exporting an App for translation.",
-                    isGoal: false
+                    colorScheme: .expert
                 ),
             ],
             currentLevel: nil,

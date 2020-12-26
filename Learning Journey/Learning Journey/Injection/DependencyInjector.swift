@@ -38,8 +38,11 @@ extension DIContainer {
 
     struct Interactors {
         let learningRoadInteractor: LearningRoadInteractor
+        let learningObjectiveInteractor: LearningObjectiveInteractor
+        
         static let stub: Interactors = .init(
-            learningRoadInteractor: LearningRoadInteractorStub()
+            learningRoadInteractor: LearningRoadInteractorStub(),
+            learningObjectiveInteractor: LearningObjectiveInteractorStub()
         )
     }
 }

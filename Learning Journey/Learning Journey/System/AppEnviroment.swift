@@ -15,6 +15,10 @@ extension AppEnvironment {
             learningRoadInteractor: DefaultLearningRoadInteractor(
                 appStore: appState,
                 localRepository: localRepository
+            ),
+            learningObjectiveInteractor: DefaultLearningObjectiveInteractor(
+                appStore: appState,
+                localRepository: localRepository
             )
         )
 

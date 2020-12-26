@@ -18,7 +18,6 @@ struct LearningRoadView: View {
 
     // MARK: - Details presentation
     // @TODO Reconsider if routing is necessary
-    @State private var isPresentingObjective: Bool = false
     @State private var selectedObjective: LearningObjective?
     
     // MARK: - Dependencies
@@ -34,6 +33,16 @@ struct LearningRoadView: View {
         )
         .navigationTitle(learningRoad.name)
         .background(Color.LearningJourney.gray)
+        .onReceive(routingUpdate) { self.routingState = $0 }
+        .onReceive(dataUpdate) {
+            if ($0.learningObjectiveDidChange != nil) {
+                loadRoadObjectives()
+                injected.appStore[\.userData.learningObjectiveDidChange] = nil
+            }
+        }
+        .sheet(isPresented: routeBinding.learningObjective, content: {
+            objectiveView
+        })
     }
 
     private var content: AnyView {
@@ -74,10 +83,11 @@ struct LearningRoadView: View {
                     )
                 }
             }
-            if isPresentingObjective {
-                blackOverlayView
-                objectiveView
-            }
+            // TODO .sheet is replacing this while proper transition is not implemented
+//            if routeBinding.learningObjective.wrappedValue {
+//                blackOverlayView
+//                objectiveView
+//            }
         }
     }
 
@@ -145,8 +155,8 @@ struct LearningRoadView: View {
     
     private func presentObjectiveView(_ objective: LearningObjective) {
         withAnimation {
-            self.isPresentingObjective = true
             self.selectedObjective = objective
+            injected.appStore[\.routing.learningRoadView.learningObjective] = true
         }
     }
     
@@ -163,8 +173,11 @@ struct LearningRoadView: View {
         else { fatalError("No object to present! This should never happen") }
         
         return AnyView(
-            LearningObjectiveView(objective: objective)
-                .transition(.scale)
+            LearningObjectiveView(
+                isDisplayed: routeBinding.learningObjective,
+                objective: objective
+            )
+            .inject(injected)
         )
     }
     
@@ -189,7 +202,24 @@ extension LearningObjective {
 
 extension LearningRoadView {
     struct Routing: Equatable {
-        var learningObjective: LearningObjective.Code?
+        var learningObjective: Bool = false
+    }
+}
+
+private extension LearningRoadView {
+    
+    var routingUpdate: AnyPublisher<Routing, Never> {
+        injected.appStore.updates(for: \.routing.learningRoadView)
+    }
+}
+
+private extension LearningRoadView {
+    var dataUpdate: AnyPublisher<AppState.UserData, Never> {
+        injected
+            .appStore
+            .updates(
+                for: \.userData
+            )
     }
 }
 

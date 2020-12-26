@@ -34,10 +34,9 @@ extension Color {
     }
 }
 
-struct PillColorScheme {
+struct PillColorScheme: Equatable {
     let backgroundColor: Color
     let color: Color
-
 }
 
 extension PillColorScheme {

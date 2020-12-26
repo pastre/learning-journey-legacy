@@ -4,21 +4,31 @@ import Foundation
 protocol LearningRoadsLocalRepository {
     func learningRoads() -> AnyPublisher<LazyList<LearningRoad>, Error>
     func learningObjectives(for road: LearningRoad) -> AnyPublisher<LazyList<LearningObjective>, Error>
+    func updateObjective(_ newObjective: LearningObjective)
 }
 
 final class DefaultLearningRoadsLocalRepository: LearningRoadsLocalRepository {
     
+    private var _learningRoads: [LearningRoad] = LearningJourney.dummy.roads.map { $0 }
+    
     func learningRoads() -> AnyPublisher<LazyList<LearningRoad>, Error> {
-        let list = LearningJourney.dummy.roads.lazyList
-        return CurrentValueSubject(list)
+        CurrentValueSubject(_learningRoads.lazyList)
             .eraseToAnyPublisher()
     }
     
     func learningObjectives(for road: LearningRoad) -> AnyPublisher<LazyList<LearningObjective>, Error> {
-        return CurrentValueSubject(road.objectives.lazyList)
+        CurrentValueSubject(road.objectives.lazyList)
             .eraseToAnyPublisher()
     }
     
+    func updateObjective(_ newObjective: LearningObjective) {
+        _learningRoads.removeAll(where: { $0.name == newObjective.learningRoad.name })
+        var newRoad = newObjective.learningRoad
+        newRoad.objectives.removeAll(where: { $0.details.code == newObjective.details.code })
+        newRoad.objectives.append(newObjective)
+        _learningRoads.append(newRoad)
+        print("---", _learningRoads)
+    }
     
 }
 
@@ -44,6 +54,7 @@ struct CoreDataLearningRoadsLocalRepository: LearningRoadsLocalRepository {
         return CurrentValueSubject(objectives)
             .eraseToAnyPublisher()
     }
+    func updateObjective(_ newObjective: LearningObjective){}
 }
 
 enum A: Error {
