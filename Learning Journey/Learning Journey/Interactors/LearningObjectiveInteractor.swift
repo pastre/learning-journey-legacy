@@ -10,6 +10,7 @@ struct DefaultLearningObjectiveInteractor: LearningObjectiveInteractor {
     let appStore: Store<AppState>
     let localRepository: LearningRoadsLocalRepository
     
+    // TODO Review this when changing local repository
     func onGoalTapped(_ objective: LearningObjective, level: LearningObjective.Level) {
         var updatedObjective = objective
         updatedObjective.currentGoal = level
@@ -17,6 +18,7 @@ struct DefaultLearningObjectiveInteractor: LearningObjectiveInteractor {
         appStore[\.userData.learningObjectiveDidChange] = updatedObjective
     }
     
+    // TODO Review this when changing local repository
     func onDoneTapped(_ objective: LearningObjective, level: LearningObjective.Level) {
         var updatedObjective = objective
         updatedObjective.currentLevel = level
