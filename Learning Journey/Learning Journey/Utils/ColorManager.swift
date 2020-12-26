@@ -4,10 +4,6 @@ extension Color {
     enum LearningJourney {
         static let gray = Color(hue: 0, saturation: 0, brightness: 0.9)
         static let darkGray = Color(hue: 0, saturation: 0, brightness: 0.47)
-        static let green = Color(hue: 126, saturation: 0.64, brightness: 0.75)
-        static let lightGreen = Color(hue: 105, saturation: 0.21, brightness: 0.97)
-        
-        
         
         enum Green {
             static let light = Color(hue: 105/360, saturation: 0.21, brightness: 0.97)

@@ -18,7 +18,10 @@ struct DefaultLearningObjectiveInteractor: LearningObjectiveInteractor {
     }
     
     func onDoneTapped(_ objective: LearningObjective, level: LearningObjective.Level) {
-        
+        var updatedObjective = objective
+        updatedObjective.currentLevel = level
+        localRepository.updateObjective(updatedObjective)
+        appStore[\.userData.learningObjectiveDidChange] = updatedObjective
     }
 }
 

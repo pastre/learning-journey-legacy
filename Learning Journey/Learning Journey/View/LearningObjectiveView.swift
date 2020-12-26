@@ -43,7 +43,8 @@ struct LearningObjectiveView: View {
                 ForEach(objective.levels, id: \.name) {
                     buildLevel(
                         level: $0,
-                        isGoal: $0 == objective.currentGoal
+                        isGoal: $0 == objective.currentGoal,
+                        isDone: $0 == objective.currentLevel
                     ).padding(.top, 16)
                 }
             }
@@ -133,9 +134,10 @@ struct LearningObjectiveView: View {
                     .font(.system(size: 10, weight: .bold))
                     .foregroundColor(
                         isGoal ? level.colorScheme.color
-                            : isDone ? Color.LearningJourney.green
+                            : isDone ? Color.LearningJourney.Green.dark
                             : Color.LearningJourney.darkGray
                     )
+                if isDone { Image.checkmarkIcon }
                 Spacer()
                 TextPill(
                     title: "Goal",

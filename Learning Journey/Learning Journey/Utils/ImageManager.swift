@@ -8,4 +8,5 @@ extension Image {
     static let swiftIcon = Image("swift_icon")
     static let trophyIcon = Image("trophy_icon")
     static let closeIcon = Image("close_icon")
+    static let checkmarkIcon = Image("checkmark_icon")
 }
