@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20B50" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="LearningJourney" representedClassName="LearningJourneyMO" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String"/>
+        <relationship name="roads" toMany="YES" deletionRule="Nullify" destinationEntity="LearningRoad" inverseName="learningJourney" inverseEntity="LearningRoad"/>
+    </entity>
+    <entity name="LearningObjective" representedClassName="LearningObjectiveMO" syncable="YES" codeGenerationType="class">
+        <attribute name="code" attributeType="String"/>
+        <attribute name="isBasic" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isCore" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="basicLevel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Level"/>
+        <relationship name="currentGoal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Level"/>
+        <relationship name="currentLevel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Level"/>
+        <relationship name="learningRoad" maxCount="1" deletionRule="Nullify" destinationEntity="LearningRoad" inverseName="objectives" inverseEntity="LearningRoad"/>
+        <relationship name="levels" toMany="YES" deletionRule="Nullify" destinationEntity="Level" inverseName="learningObjective" inverseEntity="Level"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="code"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="LearningRoad" representedClassName="LearningRoadMO" syncable="YES" codeGenerationType="class">
+        <attribute name="imageName" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="learningJourney" maxCount="1" deletionRule="Nullify" destinationEntity="LearningJourney" inverseName="roads" inverseEntity="LearningJourney"/>
+        <relationship name="objectives" toMany="YES" deletionRule="Nullify" destinationEntity="LearningObjective" inverseName="learningRoad" inverseEntity="LearningObjective"/>
+    </entity>
+    <entity name="Level" representedClassName="LevelMO" syncable="YES" codeGenerationType="class">
+        <attribute name="colorScheme" optional="YES"/>
+        <attribute name="levelDescription" optional="YES"/>
+        <attribute name="name" optional="YES"/>
+        <relationship name="learningObjective" maxCount="1" deletionRule="Nullify" destinationEntity="LearningObjective" inverseName="levels" inverseEntity="LearningObjective"/>
+    </entity>
+    <elements>
+        <element name="LearningJourney" positionX="-63" positionY="-18" width="128" height="59"/>
+        <element name="LearningRoad" positionX="-54" positionY="-9" width="128" height="89"/>
+        <element name="LearningObjective" positionX="-36" positionY="9" width="128" height="164"/>
+        <element name="Level" positionX="0" positionY="45" width="128" height="89"/>
+    </elements>
+</model>
