@@ -16,8 +16,8 @@ extension LearningRoadMO {
         return NSFetchRequest<LearningRoadMO>(entityName: "LearningRoad")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var imageName: String?
+    @NSManaged public var name: String?
     @NSManaged public var learningJourney: LearningJourneyMO?
     @NSManaged public var objectives: NSSet?
 

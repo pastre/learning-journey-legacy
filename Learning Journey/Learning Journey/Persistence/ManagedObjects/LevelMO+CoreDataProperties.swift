@@ -16,9 +16,9 @@ extension LevelMO {
         return NSFetchRequest<LevelMO>(entityName: "Level")
     }
 
-    @NSManaged public var name: NSObject?
-    @NSManaged public var levelDescription: NSObject?
-    @NSManaged public var colorScheme: NSObject?
+    @NSManaged public var colorScheme: String?
+    @NSManaged public var levelDescription: String?
+    @NSManaged public var name: String?
     @NSManaged public var learningObjective: LearningObjectiveMO?
 
 }

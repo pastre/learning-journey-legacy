@@ -12,7 +12,6 @@
 		D7125C93257C659000DC7FA2 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125C92257C659000DC7FA2 /* Store.swift */; };
 		D7125C9B257C66F800DC7FA2 /* LearningRoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125C9A257C66F800DC7FA2 /* LearningRoadView.swift */; };
 		D7125CA0257C6DC100DC7FA2 /* LearningObjectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125C9F257C6DC100DC7FA2 /* LearningObjectiveView.swift */; };
-		D7125CB3257D378000DC7FA2 /* DefaultLearningJourneys.json in Resources */ = {isa = PBXBuildFile; fileRef = D7125CB2257D378000DC7FA2 /* DefaultLearningJourneys.json */; };
 		D7125CBB257D719E00DC7FA2 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125CBA257D719E00DC7FA2 /* ImageManager.swift */; };
 		D7125CC3257D786E00DC7FA2 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125CC2257D786E00DC7FA2 /* ColorManager.swift */; };
 		D7125CC9257DA0C900DC7FA2 /* TextPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7125CC8257DA0C900DC7FA2 /* TextPill.swift */; };
@@ -34,19 +33,19 @@
 		D73A759C257B221D00C9E1FC /* LearningRoadInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A759B257B221D00C9E1FC /* LearningRoadInteractor.swift */; };
 		D73A75A5257B28F300C9E1FC /* LearningJourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73A75A4257B28F300C9E1FC /* LearningJourneyView.swift */; };
 		D74415362597BACC00A38990 /* LearningObjectiveInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74415352597BACC00A38990 /* LearningObjectiveInteractor.swift */; };
-		D744153C2598F54600A38990 /* LearningJourneyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D744153A2598F54600A38990 /* LearningJourneyModel.xcdatamodeld */; };
-		D744154C2598FAE600A38990 /* LearningRoadMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74415442598FAE600A38990 /* LearningRoadMO+CoreDataClass.swift */; };
-		D744154D2598FAE600A38990 /* LearningRoadMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74415452598FAE600A38990 /* LearningRoadMO+CoreDataProperties.swift */; };
-		D744154E2598FAE600A38990 /* LearningObjectiveMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74415462598FAE600A38990 /* LearningObjectiveMO+CoreDataClass.swift */; };
-		D744154F2598FAE600A38990 /* LearningObjectiveMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74415472598FAE600A38990 /* LearningObjectiveMO+CoreDataProperties.swift */; };
-		D74415502598FAE600A38990 /* LearningJourneyMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74415482598FAE600A38990 /* LearningJourneyMO+CoreDataClass.swift */; };
-		D74415512598FAE600A38990 /* LearningJourneyMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74415492598FAE600A38990 /* LearningJourneyMO+CoreDataProperties.swift */; };
-		D74415522598FAE600A38990 /* LevelMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D744154A2598FAE600A38990 /* LevelMO+CoreDataClass.swift */; };
-		D74415532598FAE600A38990 /* LevelMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D744154B2598FAE600A38990 /* LevelMO+CoreDataProperties.swift */; };
 		D7A7D00F257F794900D8821E /* FlatLearningJourney.json in Resources */ = {isa = PBXBuildFile; fileRef = D7A7D00E257F794900D8821E /* FlatLearningJourney.json */; };
-		D7C0052E257F86DC00434A34 /* CoreDataFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C0052D257F86DC00434A34 /* CoreDataFacade.swift */; };
 		D7C005C1257F9FB000434A34 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C005C0257F9FB000434A34 /* CoreDataStack.swift */; };
 		D7C005E2258973ED00434A34 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C005E1258973ED00434A34 /* CancelBag.swift */; };
+		D7E1969D2598FF0500FB66E1 /* DefaultLearningJourneys.json in Resources */ = {isa = PBXBuildFile; fileRef = D7125CB2257D378000DC7FA2 /* DefaultLearningJourneys.json */; };
+		D7E196A4259905A900FB66E1 /* LearningJourneyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D744153A2598F54600A38990 /* LearningJourneyModel.xcdatamodeld */; };
+		D7E196BB2599070D00FB66E1 /* LearningObjectiveMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E196B32599070D00FB66E1 /* LearningObjectiveMO+CoreDataClass.swift */; };
+		D7E196BC2599070D00FB66E1 /* LearningObjectiveMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E196B42599070D00FB66E1 /* LearningObjectiveMO+CoreDataProperties.swift */; };
+		D7E196BD2599070D00FB66E1 /* LearningJourneyMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E196B52599070D00FB66E1 /* LearningJourneyMO+CoreDataClass.swift */; };
+		D7E196BE2599070D00FB66E1 /* LearningJourneyMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E196B62599070D00FB66E1 /* LearningJourneyMO+CoreDataProperties.swift */; };
+		D7E196BF2599070D00FB66E1 /* LearningRoadMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E196B72599070D00FB66E1 /* LearningRoadMO+CoreDataClass.swift */; };
+		D7E196C02599070D00FB66E1 /* LearningRoadMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E196B82599070D00FB66E1 /* LearningRoadMO+CoreDataProperties.swift */; };
+		D7E196C12599070D00FB66E1 /* LevelMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E196B92599070D00FB66E1 /* LevelMO+CoreDataClass.swift */; };
+		D7E196C22599070D00FB66E1 /* LevelMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E196BA2599070D00FB66E1 /* LevelMO+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,18 +100,17 @@
 		D73A75A4257B28F300C9E1FC /* LearningJourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningJourneyView.swift; sourceTree = "<group>"; };
 		D74415352597BACC00A38990 /* LearningObjectiveInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningObjectiveInteractor.swift; sourceTree = "<group>"; };
 		D744153B2598F54600A38990 /* LearningJourneyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LearningJourneyModel.xcdatamodel; sourceTree = "<group>"; };
-		D74415442598FAE600A38990 /* LearningRoadMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningRoadMO+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D74415452598FAE600A38990 /* LearningRoadMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningRoadMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		D74415462598FAE600A38990 /* LearningObjectiveMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningObjectiveMO+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D74415472598FAE600A38990 /* LearningObjectiveMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningObjectiveMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		D74415482598FAE600A38990 /* LearningJourneyMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningJourneyMO+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D74415492598FAE600A38990 /* LearningJourneyMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningJourneyMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		D744154A2598FAE600A38990 /* LevelMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelMO+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D744154B2598FAE600A38990 /* LevelMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D7A7D00E257F794900D8821E /* FlatLearningJourney.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FlatLearningJourney.json; sourceTree = "<group>"; };
-		D7C0052D257F86DC00434A34 /* CoreDataFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFacade.swift; sourceTree = "<group>"; };
 		D7C005C0257F9FB000434A34 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D7C005E1258973ED00434A34 /* CancelBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
+		D7E196B32599070D00FB66E1 /* LearningObjectiveMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningObjectiveMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D7E196B42599070D00FB66E1 /* LearningObjectiveMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningObjectiveMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D7E196B52599070D00FB66E1 /* LearningJourneyMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningJourneyMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D7E196B62599070D00FB66E1 /* LearningJourneyMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningJourneyMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D7E196B72599070D00FB66E1 /* LearningRoadMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningRoadMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D7E196B82599070D00FB66E1 /* LearningRoadMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningRoadMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D7E196B92599070D00FB66E1 /* LevelMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D7E196BA2599070D00FB66E1 /* LevelMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				D73A7592257B214700C9E1FC /* AppEnviroment.swift */,
-				D7C0052D257F86DC00434A34 /* CoreDataFacade.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -288,14 +285,14 @@
 		D74415432598FABE00A38990 /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
-				D74415442598FAE600A38990 /* LearningRoadMO+CoreDataClass.swift */,
-				D74415452598FAE600A38990 /* LearningRoadMO+CoreDataProperties.swift */,
-				D74415462598FAE600A38990 /* LearningObjectiveMO+CoreDataClass.swift */,
-				D74415472598FAE600A38990 /* LearningObjectiveMO+CoreDataProperties.swift */,
-				D74415482598FAE600A38990 /* LearningJourneyMO+CoreDataClass.swift */,
-				D74415492598FAE600A38990 /* LearningJourneyMO+CoreDataProperties.swift */,
-				D744154A2598FAE600A38990 /* LevelMO+CoreDataClass.swift */,
-				D744154B2598FAE600A38990 /* LevelMO+CoreDataProperties.swift */,
+				D7E196B32599070D00FB66E1 /* LearningObjectiveMO+CoreDataClass.swift */,
+				D7E196B42599070D00FB66E1 /* LearningObjectiveMO+CoreDataProperties.swift */,
+				D7E196B52599070D00FB66E1 /* LearningJourneyMO+CoreDataClass.swift */,
+				D7E196B62599070D00FB66E1 /* LearningJourneyMO+CoreDataProperties.swift */,
+				D7E196B72599070D00FB66E1 /* LearningRoadMO+CoreDataClass.swift */,
+				D7E196B82599070D00FB66E1 /* LearningRoadMO+CoreDataProperties.swift */,
+				D7E196B92599070D00FB66E1 /* LevelMO+CoreDataClass.swift */,
+				D7E196BA2599070D00FB66E1 /* LevelMO+CoreDataProperties.swift */,
 			);
 			path = ManagedObjects;
 			sourceTree = "<group>";
@@ -415,8 +412,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7E1969D2598FF0500FB66E1 /* DefaultLearningJourneys.json in Resources */,
 				D73A7546257B181300C9E1FC /* Preview Assets.xcassets in Resources */,
-				D7125CB3257D378000DC7FA2 /* DefaultLearningJourneys.json in Resources */,
 				D73A7543257B181300C9E1FC /* Assets.xcassets in Resources */,
 				D7A7D00F257F794900D8821E /* FlatLearningJourney.json in Resources */,
 			);
@@ -443,36 +440,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D74415532598FAE600A38990 /* LevelMO+CoreDataProperties.swift in Sources */,
+				D7E196BE2599070D00FB66E1 /* LearningJourneyMO+CoreDataProperties.swift in Sources */,
+				D7E196BD2599070D00FB66E1 /* LearningJourneyMO+CoreDataClass.swift in Sources */,
+				D7E196A4259905A900FB66E1 /* LearningJourneyModel.xcdatamodeld in Sources */,
 				D74415362597BACC00A38990 /* LearningObjectiveInteractor.swift in Sources */,
-				D74415522598FAE600A38990 /* LevelMO+CoreDataClass.swift in Sources */,
 				D73A759C257B221D00C9E1FC /* LearningRoadInteractor.swift in Sources */,
+				D7E196BF2599070D00FB66E1 /* LearningRoadMO+CoreDataClass.swift in Sources */,
 				D7125CD1257DA7C500DC7FA2 /* Color+Extension.swift in Sources */,
 				D7125C8E257C4D4B00DC7FA2 /* Helpers.swift in Sources */,
-				D744153C2598F54600A38990 /* LearningJourneyModel.xcdatamodeld in Sources */,
-				D744154F2598FAE600A38990 /* LearningObjectiveMO+CoreDataProperties.swift in Sources */,
 				D7125CA0257C6DC100DC7FA2 /* LearningObjectiveView.swift in Sources */,
 				D7125CC9257DA0C900DC7FA2 /* TextPill.swift in Sources */,
 				D7C005C1257F9FB000434A34 /* CoreDataStack.swift in Sources */,
 				D7C005E2258973ED00434A34 /* CancelBag.swift in Sources */,
 				D7125CBB257D719E00DC7FA2 /* ImageManager.swift in Sources */,
 				D7125C9B257C66F800DC7FA2 /* LearningRoadView.swift in Sources */,
-				D744154D2598FAE600A38990 /* LearningRoadMO+CoreDataProperties.swift in Sources */,
+				D7E196C12599070D00FB66E1 /* LevelMO+CoreDataClass.swift in Sources */,
 				D73A7573257B1AF600C9E1FC /* MockedModel.swift in Sources */,
+				D7E196C02599070D00FB66E1 /* LearningRoadMO+CoreDataProperties.swift in Sources */,
 				D7125CC3257D786E00DC7FA2 /* ColorManager.swift in Sources */,
 				D73A7584257B1D1900C9E1FC /* AppState.swift in Sources */,
-				D744154C2598FAE600A38990 /* LearningRoadMO+CoreDataClass.swift in Sources */,
+				D7E196BC2599070D00FB66E1 /* LearningObjectiveMO+CoreDataProperties.swift in Sources */,
 				D7125C89257C4CB200DC7FA2 /* Loadable.swift in Sources */,
+				D7E196BB2599070D00FB66E1 /* LearningObjectiveMO+CoreDataClass.swift in Sources */,
 				D73A756D257B19A600C9E1FC /* Models.swift in Sources */,
 				D73A7541257B181200C9E1FC /* ContentView.swift in Sources */,
-				D7C0052E257F86DC00434A34 /* CoreDataFacade.swift in Sources */,
-				D744154E2598FAE600A38990 /* LearningObjectiveMO+CoreDataClass.swift in Sources */,
 				D73A7589257B1E2B00C9E1FC /* DependencyInjector.swift in Sources */,
 				D73A7593257B214700C9E1FC /* AppEnviroment.swift in Sources */,
-				D74415512598FAE600A38990 /* LearningJourneyMO+CoreDataProperties.swift in Sources */,
+				D7E196C22599070D00FB66E1 /* LevelMO+CoreDataProperties.swift in Sources */,
 				D72F4E5B257C486E00EBBC69 /* LearningObjectivesLocalRepository.swift in Sources */,
 				D73A75A5257B28F300C9E1FC /* LearningJourneyView.swift in Sources */,
-				D74415502598FAE600A38990 /* LearningJourneyMO+CoreDataClass.swift in Sources */,
 				D7125C93257C659000DC7FA2 /* Store.swift in Sources */,
 				D7125CD6257DA7DE00DC7FA2 /* String+Random.swift in Sources */,
 				D73A753F257B181200C9E1FC /* Learning_JourneyApp.swift in Sources */,

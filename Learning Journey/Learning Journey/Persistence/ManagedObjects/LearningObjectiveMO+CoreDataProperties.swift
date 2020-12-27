@@ -17,14 +17,14 @@ extension LearningObjectiveMO {
     }
 
     @NSManaged public var code: String?
-    @NSManaged public var name: String?
-    @NSManaged public var isCore: Bool
     @NSManaged public var isBasic: Bool
+    @NSManaged public var isCore: Bool
+    @NSManaged public var name: String?
+    @NSManaged public var basicLevel: LevelMO?
+    @NSManaged public var currentGoal: LevelMO?
+    @NSManaged public var currentLevel: LevelMO?
     @NSManaged public var learningRoad: LearningRoadMO?
     @NSManaged public var levels: NSSet?
-    @NSManaged public var currentLevel: LevelMO?
-    @NSManaged public var currentGoal: LevelMO?
-    @NSManaged public var basicLevel: LevelMO?
 
 }
 
