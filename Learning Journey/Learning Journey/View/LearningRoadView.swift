@@ -135,7 +135,7 @@ struct LearningRoadView: View {
                                 .foregroundColor(Color.LearningJourney.darkGray)
                                 .font(.system(size: 12))
                             Button {
-                                print("Hi!")
+                                presentObjectiveView(objective)
                             } label: {
                                 TextPill.expert
                             }

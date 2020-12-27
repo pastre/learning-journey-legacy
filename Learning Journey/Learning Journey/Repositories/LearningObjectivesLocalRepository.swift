@@ -27,7 +27,6 @@ final class DefaultLearningRoadsLocalRepository: LearningRoadsLocalRepository {
         newRoad.objectives.removeAll(where: { $0.details.code == newObjective.details.code })
         newRoad.objectives.append(newObjective)
         _learningRoads.append(newRoad)
-        print("---", _learningRoads)
     }
     
 }

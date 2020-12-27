@@ -160,7 +160,6 @@ struct LearningObjectiveView: View {
     
     // MARK: - Gestures
     private func onGoalTap(_ level: LearningObjective.Level) {
-        print("Goal")
         injected
             .interactors
             .learningObjectiveInteractor
@@ -168,7 +167,6 @@ struct LearningObjectiveView: View {
     }
     
     private func onDoneTap(_ level: LearningObjective.Level) {
-        print("Done")
         injected
             .interactors
             .learningObjectiveInteractor

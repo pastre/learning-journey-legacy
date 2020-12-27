@@ -43,6 +43,6 @@ struct LearningRoadInteractorStub: LearningRoadInteractor {
     }
 
     func load(_: LoadableSubject<LazyList<LearningRoad>>) {
-        print("LOADINGGGG STUB")
+        // @TODO
     }
 }
