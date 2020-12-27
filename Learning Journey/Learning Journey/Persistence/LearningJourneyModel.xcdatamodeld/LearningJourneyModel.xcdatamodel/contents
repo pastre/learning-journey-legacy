@@ -14,11 +14,6 @@
         <relationship name="currentLevel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Level"/>
         <relationship name="learningRoad" maxCount="1" deletionRule="Nullify" destinationEntity="LearningRoad" inverseName="objectives" inverseEntity="LearningRoad"/>
         <relationship name="levels" toMany="YES" deletionRule="Nullify" destinationEntity="Level" inverseName="learningObjective" inverseEntity="Level"/>
-        <uniquenessConstraints>
-            <uniquenessConstraint>
-                <constraint value="code"/>
-            </uniquenessConstraint>
-        </uniquenessConstraints>
     </entity>
     <entity name="LearningRoad" representedClassName="LearningRoadMO" syncable="YES" codeGenerationType="class">
         <attribute name="imageName" attributeType="String"/>
@@ -27,9 +22,9 @@
         <relationship name="objectives" toMany="YES" deletionRule="Nullify" destinationEntity="LearningObjective" inverseName="learningRoad" inverseEntity="LearningObjective"/>
     </entity>
     <entity name="Level" representedClassName="LevelMO" syncable="YES" codeGenerationType="class">
-        <attribute name="colorScheme" optional="YES"/>
-        <attribute name="levelDescription" optional="YES"/>
-        <attribute name="name" optional="YES"/>
+        <attribute name="colorScheme" optional="YES" attributeType="String"/>
+        <attribute name="levelDescription" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="learningObjective" maxCount="1" deletionRule="Nullify" destinationEntity="LearningObjective" inverseName="levels" inverseEntity="LearningObjective"/>
     </entity>
     <elements>
