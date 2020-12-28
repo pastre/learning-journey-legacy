@@ -148,18 +148,3 @@ extension CoreDataStack {
         }
     }
 }
-
-extension NSManagedObjectContext {
-    
-    func configureAsReadOnlyContext() {
-        automaticallyMergesChangesFromParent = true
-        mergePolicy = NSRollbackMergePolicy
-        undoManager = nil
-        shouldDeleteInaccessibleFaults = true
-    }
-    
-    func configureAsUpdateContext() {
-        mergePolicy = NSOverwriteMergePolicy
-        undoManager = nil
-    }
-}

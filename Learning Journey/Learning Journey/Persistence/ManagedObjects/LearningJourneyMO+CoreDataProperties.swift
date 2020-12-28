@@ -16,8 +16,8 @@ extension LearningJourneyMO {
         return NSFetchRequest<LearningJourneyMO>(entityName: "LearningJourney")
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var roads: NSSet?
+    @NSManaged public var name: String
+    @NSManaged public var roads: NSSet
 
 }
 

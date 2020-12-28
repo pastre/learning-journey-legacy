@@ -46,6 +46,7 @@
 		D7E196C02599070D00FB66E1 /* LearningRoadMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E196B82599070D00FB66E1 /* LearningRoadMO+CoreDataProperties.swift */; };
 		D7E196C12599070D00FB66E1 /* LevelMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E196B92599070D00FB66E1 /* LevelMO+CoreDataClass.swift */; };
 		D7E196C22599070D00FB66E1 /* LevelMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E196BA2599070D00FB66E1 /* LevelMO+CoreDataProperties.swift */; };
+		D7E196FE25990CFF00FB66E1 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E196F625990CAE00FB66E1 /* CoreDataHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		D7E196B82599070D00FB66E1 /* LearningRoadMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearningRoadMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D7E196B92599070D00FB66E1 /* LevelMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D7E196BA2599070D00FB66E1 /* LevelMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D7E196F625990CAE00FB66E1 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +307,7 @@
 				D7A7D00E257F794900D8821E /* FlatLearningJourney.json */,
 				D744153A2598F54600A38990 /* LearningJourneyModel.xcdatamodeld */,
 				D7C005C0257F9FB000434A34 /* CoreDataStack.swift */,
+				D7E196F625990CAE00FB66E1 /* CoreDataHelpers.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				D7E196BB2599070D00FB66E1 /* LearningObjectiveMO+CoreDataClass.swift in Sources */,
 				D73A756D257B19A600C9E1FC /* Models.swift in Sources */,
 				D73A7541257B181200C9E1FC /* ContentView.swift in Sources */,
+				D7E196FE25990CFF00FB66E1 /* CoreDataHelpers.swift in Sources */,
 				D73A7589257B1E2B00C9E1FC /* DependencyInjector.swift in Sources */,
 				D73A7593257B214700C9E1FC /* AppEnviroment.swift in Sources */,
 				D7E196C22599070D00FB66E1 /* LevelMO+CoreDataProperties.swift in Sources */,
